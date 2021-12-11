@@ -17,6 +17,15 @@ consistency of your choices. Go look at today’s videos again if you don’t
 understand what I mean (and I don’t mean "use everything" before you ask).
 
 
+[SEARCH]
+◦ The program will display a list of the available non-empty contacts in 4 columns: 
+	index, first name, last name and nickname.
+◦ Each column must be 10 chars wide, right aligned and separated by a ’|’ character.
+	Any output longer than the columns’ width is truncated and
+	the last displayable character is replaced by a dot (’.’).
+◦ Then the program will prompt again for the index of the desired entry 
+	and displays the contact’s information, one field per line. If the input makes no sense,
+	define a relevant behavior.
 
 */
 
@@ -28,13 +37,14 @@ void	add_contact_info()
 }
 
 //search_contact_info
-
-//exit_phonebook
+//display
 
 int	main()
 {
 
-// prompt: get input
+	std::string	command;
+
+// prompt: get input (getline)
 /*
 	while (what)
 	if command is EXIT
@@ -49,5 +59,3 @@ int	main()
 */
 
 }
-
-

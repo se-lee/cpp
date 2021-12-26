@@ -29,19 +29,40 @@ understand what I mean (and I don’t mean "use everything" before you ask).
 
 */
 
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
-//search_contact_info
-//display
-
-void	Phonebook::search_phonebook(void);
-
-void	Phonebook::display_phonebook(void)
+void	Contact::get_contact_info(void)
 {
-	
+	std::cout << "Please enter the following: " << std::endl;
+	std::cout << "First name: ";
+	std::cin >> this->first_name;
+	std::cout << "Last name: ";
+	std::cin >> this->last_name;
+	std::cout << "Nickname: ";
+	std::cin >> this->nickname;
+	std::cout << "Phone number: ";
+	std::cin >> this->phone_number;
+	std::cout << "Darkest secret: ";
+	std::cin >> this->darkest_secret;
 }
 
-void	Phonebook::exit_phonebook(void)
+void	Contact::print_contact_info(void)
+{
+	std::cout << "First name: " << this->first_name << std::endl;
+	std::cout << "Last name: " << this->last_name << std::endl;
+	std::cout << "Nickname: " << this->nickname << std::endl;
+	std::cout << "Phone number: " << this->nickname << std::endl;
+	std::cout << "Darkest secret: " << this->darkest_secret << std::endl; 
+}
+
+/*
+index
+first name
+last name
+nickname
+*/
+
+void	exit_phonebook(void)
 {
 //free all array (or linked list)
 //quit

@@ -1,6 +1,8 @@
 NAME = phonebook
 
-SRCS =	phonebook.cpp	\
+SRCS =	Contact.cpp		\
+		Phonebook.cpp	\
+		main.cpp		\
 
 GCCF = clang++ -Wall -Wextra -Werror 
 

@@ -38,7 +38,8 @@ void	Phonebook::search_phonebook(void);
 
 void	Phonebook::display_phonebook(void)
 {
-	
+	Contact		contact;
+		
 }
 
 void	Phonebook::exit_phonebook(void)

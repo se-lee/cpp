@@ -36,7 +36,7 @@ understand what I mean (and I don’t mean "use everything" before you ask).
 
 Phonebook::Phonebook(void)
 {
-	std::cout << " < Phonebook constructor >" << std::endl;
+	// std::cout << " < Phonebook constructor >" << std::endl;
 
 	Phonebook::_number_of_contact = 0;
 	Phonebook::_index_number = 0;
@@ -46,8 +46,6 @@ Phonebook::Phonebook(void)
 
 Phonebook::~Phonebook(void)
 {
-	std::cout << "< Phonebook destructor >" << std::endl;
-
 	return ;
 }
 
@@ -57,29 +55,49 @@ void	Phonebook::add_contact(void)
 
 	if (this->_number_of_contact != 8)
 	{
-		contact.get_contact_info(void);
+		contact.get_contact_info();
 		this->_contact_info[this->_number_of_contact] = contact;
 		this->_number_of_contact++;
+		std::cout << this->_number_of_contact << std::endl;
 	}
 	else
 	{
-		contact.get_contact_info(void);
+		contact.get_contact_info();
 		this->_contact_info[this->_index_number] = contact;
 		this->_index_number++;
 		if (this->_index_number == 8)
 			this->_index_number = 0;
+		std::cout << this->_index_number << std::endl;
 	}
 
 	return ;
 }
 
-void	Phonebook::search_phonebook(void)
-{
-	
-}
-
 void	Phonebook::display_phonebook(void)
 {
-	Contact		contact;
-		
+	Phonebook	phonebook;
+
+	std::cout << "|" << std::setw(10) << "Index" << "|"
+		<< std::setw(10) << "First Name" << "|"
+		<< std::setw(10) << "Last Name" << "|"
+		<< std::setw(10) << "Nickname" << "|" << std::endl;
+	
+	// i = 0;
+	// while (phonebook._contact_info != NULL)
+	// {
+	// 	std::cout << "|" << std::setw(10) << this->_number_of_contact << "|"
+	// 	<< std::setw(10) << this->_contact_info[i] << "|"
+	// 	<< std::setw(10) << "Last Name" << "|"
+	// 	<< std::setw(10) << "Nickname" << "|" << std::endl;
+	// 	i++;
+	// }
+	return ;
 }
+
+void	Phonebook::search_phonebook(void)
+{
+	Phonebook::display_phonebook();
+
+	return ;
+}
+

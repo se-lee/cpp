@@ -33,8 +33,6 @@ understand what I mean (and I don’t mean "use everything" before you ask).
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor test" << std::endl;
-
 	this->_first_name = "";
 	this->_last_name = "";
 	this->_nickname = "";
@@ -46,7 +44,6 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor test" << std::endl;
 	return ;
 }
 

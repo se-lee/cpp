@@ -19,6 +19,7 @@ public:
 	~Contact(void);
 	void	get_contact_info(void);
 	void	print_contact_info(void);
+	void	print_contact_info_short(int index);
 };
 
 #endif

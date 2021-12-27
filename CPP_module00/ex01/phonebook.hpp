@@ -9,15 +9,18 @@
 class Phonebook
 {
 private:
-	Contact	contact_info[8];
-	int		contact_number;
-	int		index_number;
+
+	Contact	_contact_info[8];
+	int		_number_of_contact;
+	int		_index_number;
 
 public:
+	Phonebook(void);
+	~Phonebook(void);
 	void	add_contact(void);
 	void	search_phonebook(void);
 	void	display_phonebook(void);
-	void	exit_phonebook(void)
+	void	exit_phonebook(void);
 };
 
 #endif

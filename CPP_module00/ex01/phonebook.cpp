@@ -29,22 +29,57 @@ understand what I mean (and I don’t mean "use everything" before you ask).
 
 */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 //search_contact_info
 //display
 
-void	Phonebook::search_phonebook(void);
+Phonebook::Phonebook(void)
+{
+	std::cout << " < Phonebook constructor >" << std::endl;
+
+	Phonebook::_number_of_contact = 0;
+	Phonebook::_index_number = 0;
+
+	return ;
+}
+
+Phonebook::~Phonebook(void)
+{
+	std::cout << "< Phonebook destructor >" << std::endl;
+
+	return ;
+}
+
+void	Phonebook::add_contact(void)
+{
+	Contact	contact;
+
+	if (this->_number_of_contact != 8)
+	{
+		contact.get_contact_info(void);
+		this->_contact_info[this->_number_of_contact] = contact;
+		this->_number_of_contact++;
+	}
+	else
+	{
+		contact.get_contact_info(void);
+		this->_contact_info[this->_index_number] = contact;
+		this->_index_number++;
+		if (this->_index_number == 8)
+			this->_index_number = 0;
+	}
+
+	return ;
+}
+
+void	Phonebook::search_phonebook(void)
+{
+	
+}
 
 void	Phonebook::display_phonebook(void)
 {
 	Contact		contact;
 		
-}
-
-void	Phonebook::exit_phonebook(void)
-{
-//free all array (or linked list)
-//quit
-
 }

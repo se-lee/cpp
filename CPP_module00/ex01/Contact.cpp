@@ -26,33 +26,59 @@ understand what I mean (and I don’t mean "use everything" before you ask).
 ◦ Then the program will prompt again for the index of the desired entry 
 	and displays the contact’s information, one field per line. If the input makes no sense,
 	define a relevant behavior.
-
 */
 
+
 #include "Contact.hpp"
+
+Contact::Contact(void)
+{
+	std::cout << "Constructor test" << std::endl;
+
+	this->_first_name = "";
+	this->_last_name = "";
+	this->_nickname = "";
+	this->_phone_number = "";
+	this->_darkest_secret = "";
+
+	return ;
+}
+
+Contact::~Contact(void)
+{
+	std::cout << "Destructor test" << std::endl;
+	return ;
+}
 
 void	Contact::get_contact_info(void)
 {
 	std::cout << "Please enter the following: " << std::endl;
 	std::cout << "First name: ";
-	std::cin >> this->first_name;
+	std::cin >> this->_first_name;
 	std::cout << "Last name: ";
-	std::cin >> this->last_name;
+	std::cin >> this->_last_name;
 	std::cout << "Nickname: ";
-	std::cin >> this->nickname;
+	std::cin >> this->_nickname;
 	std::cout << "Phone number: ";
-	std::cin >> this->phone_number;
+	std::cin >> this->_phone_number;
 	std::cout << "Darkest secret: ";
-	std::cin >> this->darkest_secret;
+	std::cin >> this->_darkest_secret;
+
+	return ;
 }
 
 void	Contact::print_contact_info(void)
 {
-	std::cout << "First name: " << this->first_name << std::endl;
-	std::cout << "Last name: " << this->last_name << std::endl;
-	std::cout << "Nickname: " << this->nickname << std::endl;
-	std::cout << "Phone number: " << this->nickname << std::endl;
-	std::cout << "Darkest secret: " << this->darkest_secret << std::endl; 
+
+	std::cout << "<< PRINT CONTACT >>" << std::endl;
+
+	std::cout << "First name: " << this->_first_name << std::endl;
+	std::cout << "Last name: " << this->_last_name << std::endl;
+	std::cout << "Nickname: " << this->_nickname << std::endl;
+	std::cout << "Phone number: " << this->_phone_number << std::endl;
+	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl; 
+
+	return ;
 }
 
 /*
@@ -62,9 +88,3 @@ last name
 nickname
 */
 
-void	exit_phonebook(void)
-{
-//free all array (or linked list)
-//quit
-
-}

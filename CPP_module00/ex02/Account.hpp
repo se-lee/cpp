@@ -12,16 +12,15 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+# include <iostream>
+
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
 
 class Account {
 
-
 public:
-
-	typedef Account		t;
 
 	static int	getNbAccounts( void );
 	static int	getTotalAmount( void );
@@ -45,7 +44,10 @@ private:
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
-	static void	_displayTimestamp( void );
+	static void	_displayTimestamp( void )
+	{
+		std::cout << "[19920104_091532] ";
+	}
 
 	int				_accountIndex;
 	int				_amount;
@@ -55,8 +57,6 @@ private:
 	Account( void );
 
 };
-
-
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //

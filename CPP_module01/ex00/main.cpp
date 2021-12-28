@@ -2,16 +2,16 @@
 
 int		main()
 {
-	Zombie	zombie = Zombie("Zombie1");
-	Zombie	zombie2 = Zombie("Zombie2");
-
-	Zombie	*zombiePtr = new Zombie("new_zombie");
-
-	zombie.announce();
-	zombie2.announce();
-	zombiePtr->announce();
+	Zombie	zombie = Zombie("Just_Zombie on the stack");
+	Zombie	*newZombie = new Zombie("New_zombie on the heap");
+	// Zombie	*another_newZombie = newZombie("another_newZombie");
 	
-	delete zombiePtr;
+	zombie.announce();
+	newZombie->announce();
+	// another_newZombie->announce();
+	randomChump("random_zombie");
+
+	delete newZombie;
 
 	return (0);
 }

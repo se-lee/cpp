@@ -4,14 +4,16 @@ int		main()
 {
 	Zombie	zombie = Zombie("Just_Zombie on the stack");
 	Zombie	*newZombie = new Zombie("New_zombie on the heap");
-	// Zombie	*another_newZombie = newZombie("another_newZombie");
+	Zombie	*zewNombie = newZombie("name");
+	/* compile error and I have no idea why */
 	
 	zombie.announce();
 	newZombie->announce();
-	// another_newZombie->announce();
+	zewNombie->announce();
 	randomChump("random_zombie");
 
 	delete newZombie;
-
+	delete zewNombie;
+	
 	return (0);
 }

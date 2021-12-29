@@ -12,7 +12,8 @@ Zombie	*zombieHorde( int N, std::string name )
 	i = 0;
 	while (i < N)
 	{
-		std::string number = std::to_string(i);
+		std::string number = std::to_string(i); 
+			//C++ 11 ? am i allowed to use this
 		zombies[i].set_name(name + "[" + number + "]");
 		i++;
 	}

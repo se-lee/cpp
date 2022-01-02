@@ -2,16 +2,18 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 
 class Fixed
 {
 private:
 	int					_value;
-	static int const	_bit = 8;
+	static int const	_bit;
 
 public:
 	Fixed(void);
 	~Fixed(void);
+	Fixed(const int nbr);
 	Fixed(const Fixed &fixed);
 	
 	Fixed &operator=(Fixed const &fixed);

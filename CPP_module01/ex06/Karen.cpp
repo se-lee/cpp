@@ -11,14 +11,13 @@ Karen::~Karen(void)
 void	Karen::_debug(void)
 {
 	std::cout << "[ DEBUG ] I love to get extra bacon for my 
-		7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
+		7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;	
 }
 
 void	Karen::_info(void)
 {
 	std::cout << "[ INFO ] I cannot believe adding extra bacon cost more money. 
 		You don’t put enough! If you did I would not have to ask for it!" << std::endl;
-
 }
 
 void	Karen::_warning(void)
@@ -30,30 +29,4 @@ void	Karen::_warning(void)
 void	Karen::_error(void)
 {
 	std::cout << "[ ERROR ] This is unacceptable, I want to speak to the manager now." << std::endl;
-}
-
-void	Karen::complain(std::string level)
-{
-	t_level_func
-	int		i;
-
-	i = 0;
-	while (i < 4)
-	{
-		if ()
-	}
-
-//	level.compare("DEBUG")
-//	level.find
-
-/*
-
-void	abc(void);
-void	(*ptr)(void) = abc;
-*ptr(); //execute function pointer
-
-*/
-
-
-
 }

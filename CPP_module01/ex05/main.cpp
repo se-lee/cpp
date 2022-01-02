@@ -2,6 +2,8 @@
 
 int main()
 {
+	Karen	karen = Karen();
+
 	
 
 

@@ -2,8 +2,6 @@
 
 Phonebook::Phonebook(void)
 {
-	// std::cout << " < Phonebook constructor >" << std::endl;
-
 	Phonebook::_number_of_contact = 0;
 	Phonebook::_index_number = 0;
 
@@ -24,7 +22,6 @@ void	Phonebook::add_contact(void)
 		contact.get_contact_info();
 		this->_contact_info[this->_number_of_contact] = contact;
 		this->_number_of_contact++;
-		std::cout << this->_number_of_contact << std::endl;
 	}
 	else
 	{
@@ -33,7 +30,6 @@ void	Phonebook::add_contact(void)
 		this->_index_number++;
 		if (this->_index_number == 8)
 			this->_index_number = 0;
-		std::cout << this->_index_number << std::endl;
 	}
 	return ;
 }

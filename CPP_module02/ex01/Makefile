@@ -1,13 +1,13 @@
-NAME = karenfilter
+NAME = ex01
 
 SRCS =	main.cpp		\
-		Karen.cpp		\
+		Fixed.cpp		\
 
-GCCF = clang++ -Wall -Wextra -Werror 
+GCCF = clang++ -Wall -Werror -Wextra
 
 OBJS = $(addprefix bin/, ${SRCS:.cpp=.o})
 
-bin/%.o : 	%.cpp
+bin/%.o :	%.cpp
 			@mkdir -p $(dir $@)
 			${GCCF} -c $< -o $@ -Iinclude
 

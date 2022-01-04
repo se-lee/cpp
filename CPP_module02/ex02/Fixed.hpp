@@ -6,45 +6,45 @@
 
 class Fixed
 {
-private:
-	int					_value; //fixed point value
-	static int const	_bit;
+	private:
+		int					_value; //fixed point value
+		static int const	_bit;
 
-public:
-	Fixed(void);
-	~Fixed(void);
-	Fixed(const int nbr);
-	Fixed(const float nbr);
-	Fixed(const Fixed &fixed);
-	
-	Fixed &operator=(const Fixed &fixed);
-	
-	bool	operator>(const Fixed &fixed)const;
-	bool	operator<(const Fixed &fixed)const;
-	bool	operator>=(const Fixed &fixed)const;
-	bool	operator<=(const Fixed &fixed)const;
-	bool 	operator==(const Fixed &fixed)const;
-	bool	operator!=(const Fixed &fixed)const;
+	public:
+		Fixed(void);
+		~Fixed(void);
+		Fixed(const int nbr);
+		Fixed(const float nbr);
+		Fixed(const Fixed &fixed);
+		
+		Fixed &operator=(const Fixed &fixed);
+		
+		bool	operator>(const Fixed &fixed)const;
+		bool	operator<(const Fixed &fixed)const;
+		bool	operator>=(const Fixed &fixed)const;
+		bool	operator<=(const Fixed &fixed)const;
+		bool 	operator==(const Fixed &fixed)const;
+		bool	operator!=(const Fixed &fixed)const;
 
-	Fixed	operator+(const Fixed &fixed)const;
-	Fixed	operator-(const Fixed &fixed)const;
-	Fixed	operator*(const Fixed &fixed)const;
-	Fixed	operator/(const Fixed &fixed)const;
+		Fixed	operator+(const Fixed &fixed)const;
+		Fixed	operator-(const Fixed &fixed)const;
+		Fixed	operator*(const Fixed &fixed)const;
+		Fixed	operator/(const Fixed &fixed)const;
 
-	Fixed	&operator++(void);// ++a
-	Fixed	operator++(int);// a++
-	Fixed	&operator--(void); //--a
-	Fixed	operator--(int); //a--
+		Fixed	&operator++(void);// ++a
+		Fixed	operator++(int);// a++
+		Fixed	&operator--(void); //--a
+		Fixed	operator--(int); //a--
 
-	float	toFloat(void)const;
-	int		toInt(void)const;
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+		float	toFloat(void)const;
+		int		toInt(void)const;
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
-	static Fixed		&min(Fixed &fixed1, Fixed &fixed2);
-	static Fixed const	&min(const Fixed &fixed1, const Fixed &fixed2);
-	static Fixed		&max(Fixed &fixed1, Fixed &fixed2);
-	static Fixed const	&max(const Fixed &fixed1, const Fixed &fixed2);
+		static Fixed		&min(Fixed &fixed1, Fixed &fixed2);
+		static Fixed const	&min(const Fixed &fixed1, const Fixed &fixed2);
+		static Fixed		&max(Fixed &fixed1, Fixed &fixed2);
+		static Fixed const	&max(const Fixed &fixed1, const Fixed &fixed2);
 
 };
 

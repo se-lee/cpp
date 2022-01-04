@@ -3,9 +3,9 @@
 int	main()
 {
 	Fixed		a;
-	Fixed const	b(10);
-	Fixed const	c(42.42f);
-	Fixed const	d(b);
+	Fixed const	b(10); //int
+	Fixed const	c(42.42f); //float
+	Fixed const	d(b); //copy
 
 	a = Fixed(1234.4321f);
 

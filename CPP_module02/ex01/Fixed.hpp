@@ -18,12 +18,14 @@ public:
 	Fixed(const Fixed &fixed);
 	
 	Fixed &operator=(const Fixed &fixed);
-	Fixed &operator<<(const Fixed &fixed); // +output stream..??);
 
-	float	toFloat(void);
-	int		toInt(void);
+	float	toFloat(void)const;
+	int		toInt(void)const;
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+//this must be global (istream and ostream)
 
 #endif

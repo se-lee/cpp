@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+int const	Fixed::_bit = 8;
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -13,26 +15,18 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const int nbr)
 {
-/*
-A constructor that takes a constant integer as a parameter
-and that converts it to the correspondant fixed(8) point value. 
-The fractional bits value is initialized like in ex00.
-*/
+/* convert int to fixed point value */
+	this->_value = nbr << this->_bit;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nbr)
 {
-/*
-A constructor that takes a constant floating point as a parameter
-and that converts it to the correspondant fixed(8) point value. 
-The fractional bits value is initialized like in ex00.
-*/
-
+/* convert float to fixed point value */
+	this->_value = std::roundf(nbr * (1 << this->_bit));
 	std::cout << "Float constructor called" << std::endl;
 }
 
-/* Copy constructor */
 Fixed::Fixed(Fixed const &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -42,27 +36,33 @@ Fixed::Fixed(Fixed const &fixed)
 Fixed	&Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
+	this->_value = fixed._value;
 	return (*this);
 }
 
-Fixed	&Fixed::operator<<(const Fixed &fixed)
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
 {
-	std::cout << "Operator called" << std::endl;
-/* 
-inserts a floating point representation of 
-the fixed point value into the parameter output stream. 
-*/
-	return (*this);
+/* inserts a floating point representation of 
+the fixed point value into the parameter output stream. */
+	out << fixed.toFloat();
+	return (out);
 }
 
-float	Fixed::toFloat()
+float	Fixed::toFloat()const
 { // converts the fixed point value to a floating point value
+	float	ret;
+	ret = ((float)this->_value / (float)(1 << this->_bit));
 
+	return (ret);
 }
 
-int		Fixed::toInt()
+int		Fixed::toInt()const
 { //converts the fixed point value to an integer value.
-
+	int		ret;
+	ret = this->_value >> this->_bit;
+	return (ret);
 }
 
-
+/*
+int to fixed point: n << fractional bits
+*/

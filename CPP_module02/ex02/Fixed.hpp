@@ -31,8 +31,10 @@ public:
 	Fixed	operator*(const Fixed &fixed)const;
 	Fixed	operator/(const Fixed &fixed)const;
 
-	// ++
-	// --
+	Fixed	&operator++(void);// ++a
+	Fixed	operator++(int);// a++
+	Fixed	&operator--(void); //--a
+	Fixed	operator--(int); //a--
 
 	float	toFloat(void)const;
 	int		toInt(void)const;

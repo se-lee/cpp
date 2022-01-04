@@ -120,6 +120,41 @@ Fixed	Fixed::operator/(const Fixed &fixed)const
 
 
 
+/* --- Increment/Decrement Operator overload --- */
+
+Fixed	&Fixed::operator++(void) //++a
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) //a++
+{
+	Fixed	ret_fixed(*this);
+	this->_value++;
+	return (ret_fixed);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	ret_fixed(*this);
+	this->_value--;
+	return (ret_fixed);
+}
+
+/* --- Increment/Decrement Operator overload end --- */
+
+
+
+
+
+
 float	Fixed::toFloat()const
 {
 	float	ret;

@@ -58,3 +58,14 @@ int		Fixed::toInt()const
 	ret = this->_value >> this->_bit;
 	return (ret);
 }
+
+int		Fixed::getRawBits() const
+{
+	std::cout << "getRawBits member function called" <<std::endl;
+	return (this->_value);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->_value = raw;
+}

@@ -13,28 +13,27 @@ Account::~Account(void)
 		<< "amount:" << this->_amount << ";"  << "closed" << std::endl;
 }
 
-
-static int	Account::getNbAccounts(void)
+int	Account::getNbAccounts(void)
 {
 	return(_nbAccounts);
 }
 
-static int	Account::getTotalAmount(void)
+int	Account::getTotalAmount(void)
 {
 	return(_totalAmount);
 }
 
-static int	Account::getNbDeposits(void)
+int	Account::getNbDeposits(void)
 {
 	return(_totalNbDeposits);
 }
 
-static int	Account::getNbWithdrawals(void)
+int	Account::getNbWithdrawals(void)
 {
 	return(_totalNbWithdrawals);
 }
 
-static void	Account::displayAccountsInfos(void)
+void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts();
@@ -100,7 +99,7 @@ void	Account::displayStatus( void ) const
 	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-static void	Account::_displayTimestamp( void )
+void	Account::_displayTimestamp( void )
 {
 	time_t		timestamp;
 	char		buff[15];

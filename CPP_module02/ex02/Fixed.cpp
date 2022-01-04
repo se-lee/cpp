@@ -14,13 +14,13 @@ Fixed::~Fixed()
 }
 
 Fixed::Fixed(const int nbr)
-{/* convert int to fixed point value */
+{
 	this->_value = nbr << this->_bit;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nbr)
-{/* convert float to fixed point value */
+{
 	std::cout << "Float constructor called" << std::endl;
 	this->_value = (int)std::roundf(nbr * (1 << this->_bit));
 }
@@ -31,6 +31,7 @@ Fixed::Fixed(Fixed const &fixed)
 	*this = fixed;
 }
 
+
 Fixed	&Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
@@ -38,12 +39,59 @@ Fixed	&Fixed::operator=(const Fixed &fixed)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
-{/* inserts a floating point representation of 
-the fixed point value into the parameter output stream. */
-	out << fixed.toFloat();
-	return (out);
+/* Comparison Operator overload */
+bool	Fixed::operator>(const Fixed &fixed)const
+{
+	if (fixed._value > this->_value)
+		return (true);
+	else
+		return (false);
 }
+
+
+bool	Fixed::operator<(const Fixed &fixed)const
+{
+	if (fixed._value < this->_value)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator>=(const Fixed &fixed)const
+{
+	if (fixed._value >= this->_value)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator<=(const Fixed &fixed)const
+{
+	if (fixed._value <= this->_value)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator==(const Fixed &fixed)const
+{
+	if (fixed._value == this->_value)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator!=(const Fixed &fixed)const
+{
+	if (fixed._value != this->_value)
+		return (true);
+	else
+		return (false);
+}
+
+
+
+
 
 float	Fixed::toFloat()const
 {
@@ -57,4 +105,11 @@ int		Fixed::toInt()const
 	int		ret;
 	ret = this->_value >> this->_bit;
 	return (ret);
+}
+
+
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
 }

@@ -8,8 +8,10 @@ int	main()
 
 	c = b;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << "a) " << a.getRawBits() << std::endl;
+	std::cout << "b) " << b.getRawBits() << std::endl;
+	std::cout << "c) " << c.getRawBits() << std::endl;
+//あとでABC消す
 
+	return (0);
 }

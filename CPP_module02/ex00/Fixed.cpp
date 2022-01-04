@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+int const Fixed::_bit = 8;
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -17,10 +19,10 @@ Fixed::Fixed(const Fixed &fixed)
 	*this = fixed;
 }
 
-Fixed &Fixed::operator=(Fixed const &fixed)
+Fixed &Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	_value = fixed.getRawBits();
+	this->_value = fixed.getRawBits();
 	return (*this);
 }
 

@@ -39,7 +39,7 @@ Fixed	&Fixed::operator=(const Fixed &fixed)
 	return (*this);
 }
 
-/* Comparison Operator overload */
+/* --- Comparison Operator overload --- */
 bool	Fixed::operator>(const Fixed &fixed)const
 {
 	if (fixed._value > this->_value)
@@ -47,7 +47,6 @@ bool	Fixed::operator>(const Fixed &fixed)const
 	else
 		return (false);
 }
-
 
 bool	Fixed::operator<(const Fixed &fixed)const
 {
@@ -88,8 +87,36 @@ bool	Fixed::operator!=(const Fixed &fixed)const
 	else
 		return (false);
 }
+/* --- Comparison Operator overload end --- */
 
 
+/* --- Arithmetic Operator overload --- */
+
+Fixed	Fixed::operator+(const Fixed &fixed)const
+{
+	Fixed	ret_fixed(fixed.toFloat() + this->toFloat());
+	return (ret_fixed);
+}
+
+Fixed	Fixed::operator-(const Fixed &fixed)const
+{
+	Fixed	ret_fixed(fixed.toFloat() - this->toFloat());
+	return (ret_fixed);
+}
+
+Fixed	Fixed::operator*(const Fixed &fixed)const
+{
+	Fixed 	ret_fixed(fixed.toFloat() * this->toFloat());
+	return	(ret_fixed);
+}
+
+Fixed	Fixed::operator/(const Fixed &fixed)const
+{
+	Fixed	ret_fixed(fixed.toFloat() / this->toFloat());
+	return (ret_fixed);
+}
+
+/* --- Arithmetic Operator overload end --- */
 
 
 

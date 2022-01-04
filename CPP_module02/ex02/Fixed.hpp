@@ -7,7 +7,7 @@
 class Fixed
 {
 private:
-	int					_value;
+	int					_value; //fixed point value
 	static int const	_bit;
 
 public:
@@ -26,10 +26,13 @@ public:
 	bool 	operator==(const Fixed &fixed)const;
 	bool	operator!=(const Fixed &fixed)const;
 
-	Fixed &operator+(const Fixed &fixed);
-	Fixed &operator-(const Fixed &fixed);
-	Fixed &operator*(const Fixed &fixed);
-	Fixed &operator/(const Fixed &fixed);
+	Fixed	operator+(const Fixed &fixed)const;
+	Fixed	operator-(const Fixed &fixed)const;
+	Fixed	operator*(const Fixed &fixed)const;
+	Fixed	operator/(const Fixed &fixed)const;
+
+	// ++
+	// --
 
 	float	toFloat(void)const;
 	int		toInt(void)const;

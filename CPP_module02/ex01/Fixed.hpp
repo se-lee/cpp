@@ -14,10 +14,14 @@ public:
 	Fixed(void);
 	~Fixed(void);
 	Fixed(const int nbr);
+	Fixed(const float nbr);
 	Fixed(const Fixed &fixed);
 	
-	Fixed &operator=(Fixed const &fixed);
+	Fixed &operator=(const Fixed &fixed);
+	Fixed &operator<<(const Fixed &fixed); // +output stream..??);
 
+	float	toFloat(void);
+	int		toInt(void);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };

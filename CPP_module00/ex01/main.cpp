@@ -11,10 +11,12 @@ int		main()
 		std::cin >> command;
 		if (command == "ADD" || command == "add")
 			phonebook.add_contact();
-		if (command == "SEARCH" || command == "search")
+		else if (command == "SEARCH" || command == "search")
 			phonebook.search_phonebook();
-		if (command == "EXIT" || command == "exit")
+		else if (command == "EXIT" || command == "exit")
 			break ;
+		else
+			std::cout << "Invalid command" << std::endl;
 	}
 	return (0);
 }

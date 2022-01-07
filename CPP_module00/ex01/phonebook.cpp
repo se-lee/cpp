@@ -67,15 +67,18 @@ void	Phonebook::search_phonebook(void)
 		std::cin >> index;
 		if (index >= 0 && index <= 8)
 			this->_contact_info[index].print_contact_info();
+		else if (index < 0 || index > 8)
+		{
+			std::cout << "Index out of range" << std::endl;
+			return ;
+		}
 		else if (!std::cin.good())
 		{
 			std::cin.clear();
 			std::cin.ignore(255, '\n');
 			std::cout << "Invalid index" << std::endl;
-			
 			return ;
 		}
 	}
-
 	return ;
 }

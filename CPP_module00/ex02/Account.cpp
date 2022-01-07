@@ -90,14 +90,6 @@ int		Account::checkAmount( void ) const
 	return (1);
 }
 
-void	Account::displayStatus( void ) const
-{
-	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";";
-	std::cout << "amount:" << _amount << ";";
-	std::cout << "deposits:" << _nbDeposits << ";";
-	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
-}
 
 void	Account::_displayTimestamp( void )
 {
@@ -108,5 +100,15 @@ void	Account::_displayTimestamp( void )
 	strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&timestamp));
 	std::cout << "[" << buff << "]";
 }
+
+void	Account::displayStatus( void ) const
+{
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "deposits:" << _nbDeposits << ";";
+	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
+}
+
 
 

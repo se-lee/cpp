@@ -3,7 +3,7 @@ NAME = account
 SRCS =	Account.cpp	\
 		tests.cpp	\
 
-GCCF = clang++ -Wall -Wextra -Werror 
+GCCF = clang++ #-Wall -Wextra -Werror 
 
 OBJS = $(addprefix bin/, ${SRCS:.cpp=.o})
 

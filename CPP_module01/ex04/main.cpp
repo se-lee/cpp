@@ -19,32 +19,34 @@ int		main(int argc, char **argv)
 
 	Replace			replace(argv[2], argv[3]);
 	std::ifstream	in_file(argv[1]);
-	std::string		out_filename = argv[1];
 	std::string		line;
 	int				line_num = 1;
-	out_filename.append(".replace");
-	std::ofstream	out_file(out_filename);
 
+	if (in_file.fail())
+	{
+		std::cout << "input file open fail" << std::endl;
+		return (1);
+	}
+	std::ofstream	out_file(out_filename);
+	std::string		out_filename = argv[1];
+	out_filename.append(".replace");
+	if (out_file.fail())
+	{
+		std::cout << "output file open fail" << std::endl;
+		in_file.close();
+		return (1);
+	}
 	while(std::getline(in_file, line))
 	{
-		std::cout << line_num << ": " << line << std::endl;
-		out_file << replace.put_before(line) << replace.getReplaceDest()
-			<< replace.put_after(line) << std::endl;
+		std::cout << line_num << ":" << line << std::endl;\
+		if (line.find(replace.getReplaceSrc()) == std::string::npos)
+			out_file << line << std::endl;
+		else
+			out_file << replace.put_before(line) << replace.getReplaceDest()
+				<< replace.put_after(line) << std::endl;
 		line_num++;
 	}
 	in_file.close();
-	return 0;
-
+	out_file.close();
+	return (0);
 }
-
-
-
-/*
-
-open
-read
-write
-
-
-
-*/

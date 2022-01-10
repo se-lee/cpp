@@ -17,4 +17,10 @@ public:
 	void	complain(std::string level);
 };
 
+typedef	struct s_level_func
+{
+	std::string		level;
+	void			(Karen::*f_ptr)(void);
+}	t_level_func;
+
 #endif

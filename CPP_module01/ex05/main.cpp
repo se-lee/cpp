@@ -2,10 +2,13 @@
 
 int main()
 {
-	Karen	karen = Karen();
+	Karen	karen;
 
-	
-
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+	karen.complain("WARNING");
+	karen.complain("ERROR");
+	karen.complain("BAAAAAH");
 
 	return 0;
 }

@@ -3,13 +3,11 @@
 
 # include <iostream>
 # include <string>
-#include <fstream>
+# include <fstream>
 
 class Replace
 {
 	private:
-		std::ifstream	in_file;
-		std::ofstream	out_file;
 		std::string		_replace_src;
 		std::string		_replace_dest;
 
@@ -17,9 +15,12 @@ class Replace
 		Replace(void);
 		Replace(std::string s1, std::string s2);
 		~Replace();
-		size_t			find_position(std::string line);
-		std::string		replace_word(std::string line);
 
+		size_t				find_position(std::string line);
+		std::string			put_before(std::string line);
+		std::string			put_after(std::string line);
+		const std::string	&getReplaceSrc(void);
+		const std::string	&getReplaceDest(void);
 };
 
 #endif

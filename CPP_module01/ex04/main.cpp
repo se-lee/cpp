@@ -18,23 +18,22 @@ int		main(int argc, char **argv)
 	}
 
 	Replace			replace(argv[2], argv[3]);
-	// std::ifstream	in_file(argv[1]);
-	// std::string		out_filename = argv[1];
+	std::ifstream	in_file(argv[1]);
+	std::string		out_filename = argv[1];
 	std::string		line;
 	int				line_num = 1;
 	out_filename.append(".replace");
-	// std::ofstream	out_file(out_filename);
+	std::ofstream	out_file(out_filename);
 
 	while(std::getline(in_file, line))
 	{
 		std::cout << line_num << ": " << line << std::endl;
-		out_file << replace.replace_word(line);
+		out_file << replace.put_before(line) << replace.getReplaceDest()
+			<< replace.put_after(line) << std::endl;
 		line_num++;
 	}
 	in_file.close();
 	return 0;
-// open "filename", read the content and write to filename.replace
-// the program will find the occurences of s1 and then replace them with s2
 
 }
 

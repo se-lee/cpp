@@ -27,7 +27,7 @@ int		main(int argc, char **argv)
 		std::cout << "input file open fail" << std::endl;
 		return (ERROR);
 	}
-	out_filename.append(".replace");
+	out_filename += ".replace";
 	std::ofstream	out_file(out_filename);
 
 	if (out_file.fail())

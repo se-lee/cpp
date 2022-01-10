@@ -5,6 +5,9 @@
 # include <string>
 # include <fstream>
 
+# define SUCCESS	0
+# define ERROR		1
+
 class Replace
 {
 	private:
@@ -16,9 +19,8 @@ class Replace
 		Replace(std::string s1, std::string s2);
 		~Replace();
 
-		size_t				find_position(std::string line);
-		std::string			put_before(std::string line);
-		std::string			put_after(std::string line);
+		std::string			before_word(std::string line);
+		std::string			after_word(std::string line);
 		const std::string	&getReplaceSrc(void);
 		const std::string	&getReplaceDest(void);
 };

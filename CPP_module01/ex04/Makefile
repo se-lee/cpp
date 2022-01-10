@@ -1,7 +1,7 @@
 NAME = replace
 
 SRCS =	main.cpp		\
-
+		Replace.cpp		\
 
 GCCF = clang++ -Wall -Wextra -Werror 
 

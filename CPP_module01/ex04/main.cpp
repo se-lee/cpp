@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstring>
-
-// ./a.out filename s1 s2
+#include "Replace.hpp"
 
 int		arg_is_valid(int argc, char **argv)
 {
@@ -14,27 +9,29 @@ int		arg_is_valid(int argc, char **argv)
 	return (1);
 }
 
-
 int		main(int argc, char **argv)
 {
 	if (!arg_is_valid(argc, argv))
-		return (1);
-	std::string	filename(argv[1]);
-	std::string s1(argv[2]);
-	std::string s2(argv[3]);
-
-	std::ifstream	file(filename);
-	std::string		line;
-	
-	while(file)
 	{
-		std::getline(std::cin, line);
-		if (line == "-1")
-			break ;
-		std::cout << line << std::endl;
+		std::cout << "Error" << std::endl;
+		return (1);
 	}
 
-	file.close();
+	Replace			replace(argv[2], argv[3]);
+	// std::ifstream	in_file(argv[1]);
+	// std::string		out_filename = argv[1];
+	std::string		line;
+	int				line_num = 1;
+	out_filename.append(".replace");
+	// std::ofstream	out_file(out_filename);
+
+	while(std::getline(in_file, line))
+	{
+		std::cout << line_num << ": " << line << std::endl;
+		out_file << replace.replace_word(line);
+		line_num++;
+	}
+	in_file.close();
 	return 0;
 // open "filename", read the content and write to filename.replace
 // the program will find the occurences of s1 and then replace them with s2

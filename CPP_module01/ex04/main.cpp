@@ -23,9 +23,9 @@ int		main(int argc, char **argv)
 	Replace			replace(argv[1], argv[2], argv[3]);
 	
 	if (!replace.set_in_file())
-		return (display_error("Error: input file open fail"));	
+		return (display_error("Error: input file fail"));	
 	if (!replace.set_out_file())
-		return (display_error("Error: outfile faile"));
+		return (display_error("Error: outfile fail"));
 	replace.replace_word();
 	return (SUCCESS);
 }

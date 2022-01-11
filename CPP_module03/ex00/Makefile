@@ -1,7 +1,7 @@
 NAME = ClapTrap
 
 SRCS =	main.cpp		\
-		ClapTrap.cpp		\
+		ClapTrap.cpp	\
 
 GCCF = clang++ -Wall -Werror -Wextra
 

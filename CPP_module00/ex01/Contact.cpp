@@ -13,7 +13,6 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-	return ;
 }
 
 void	Contact::get_contact_info(void)
@@ -29,8 +28,6 @@ void	Contact::get_contact_info(void)
 	std::cin >> this->_phone_number;
 	std::cout << "[Darkest secret]: ";
 	std::cin >> this->_darkest_secret;
-
-	return ;
 }
 
 void	Contact::print_contact_info(void)
@@ -40,9 +37,7 @@ void	Contact::print_contact_info(void)
 	std::cout << "[Nickname]: " << this->_nickname << std::endl;
 	std::cout << "[Phone number]: " << this->_phone_number << std::endl;
 	std::cout << "[Darkest secret]: " << this->_darkest_secret << std::endl; 
-	
-	return ;
-}
+	}
 
 void	Contact::print_contact_info_short(int index)
 {
@@ -50,7 +45,5 @@ void	Contact::print_contact_info_short(int index)
 		<< std::setw(10) << this->_first_name << "|"
 		<< std::setw(10) << this->_last_name << "|"
 		<< std::setw(10) << this->_nickname << "|" << std::endl;
-
-	return ;
 }
 

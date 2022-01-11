@@ -15,7 +15,7 @@ public:
 	~Fixed(void);
 	Fixed(const int nbr);
 	Fixed(const float nbr);
-	Fixed(const Fixed &fixed);
+	Fixed(const Fixed &fixed); //copy constructor
 	
 	Fixed &operator=(const Fixed &fixed);
 

@@ -20,6 +20,8 @@ Account::Account(int initial_deposit)
 {
 	this->_accountIndex = Account::_nbAccounts++;
 	this->_amount = initial_deposit;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	Account::_totalAmount += initial_deposit;
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
@@ -95,15 +97,16 @@ int		Account::checkAmount(void)const
 	return (1);
 }
 
+
 void	Account::_displayTimestamp( void )
 {
 	std::time_t		timestamp;
 	std::tm			*timeinfo;
-	char			buff[15];
+	char			buff[16];
 
 	std::time(&timestamp);
 	timeinfo = std::localtime(&timestamp);
-	std::strftime(buff, 15, "%Y%m%d_%H%M%S", timeinfo);
+	std::strftime(buff, 16, "%Y%m%d_%H%M%S", timeinfo);
 	std::cout << "[" << buff << "] ";
 }
 

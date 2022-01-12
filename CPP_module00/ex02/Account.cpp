@@ -26,8 +26,7 @@ Account::Account(int initial_deposit)
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << initial_deposit << ";";
-	std::cout << "created";
-	std::cout << "  [Account(initial_deposit)]" <<std::endl;
+	std::cout << "created" << std::endl;
 }
 
 int		Account::getNbAccounts()
@@ -61,8 +60,7 @@ void	Account::makeDeposit(int deposit)
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "nb_deposits:" << this->_nbDeposits;
-	std::cout << "  [makeDeposit]" << std::endl;
+	std::cout << "nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
@@ -86,7 +84,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 		std::cout << "amount:" << this->_amount << ";";
 		std::cout << "nb_withdrawals:" << this->_nbWithdrawals;
 	}
-	std::cout << "  [makeWithdrawal]" << std::endl;
+	std::cout << std::endl;
 	return (true);
 }
 
@@ -116,8 +114,7 @@ void	Account::displayAccountsInfos()
 	std::cout << "accounts:" << Account::getNbAccounts() << ";";
 	std::cout << "total:" << Account::getTotalAmount() << ";";
 	std::cout << "deposits:" << Account::getNbDeposits() << ";";
-	std::cout << "withdrawls:" << Account::getNbWithdrawals(); // << std::endl;
-	std::cout << " [displayAccountInfos]" << std::endl;
+	std::cout << "withdrawls:" << Account::getNbWithdrawals() << std::endl;
 }
 
 void	Account::displayStatus(void)const
@@ -126,8 +123,7 @@ void	Account::displayStatus(void)const
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
-	std::cout << "withdrawals:" << this->_nbWithdrawals;
-	std::cout << "  [displayStatus]" << std::endl;
+	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
 Account::~Account(void)
@@ -135,6 +131,5 @@ Account::~Account(void)
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "closed";
-	std::cout << "  [~Account destructor]" << std::endl;
+	std::cout << "closed" << std::endl;
 }

@@ -7,8 +7,6 @@ Contact::Contact(void)
 	this->_nickname = "";
 	this->_phone_number = "";
 	this->_darkest_secret = "";
-
-	return ;
 }
 
 Contact::~Contact(void)

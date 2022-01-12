@@ -2,7 +2,7 @@
 
 Dog::Dog()
 {
-	this->type = "Dog";
+	this->_type = "Dog";
 	std::cout << "[Dog] Default Constructor" << std::endl;
 }
 
@@ -20,7 +20,7 @@ Dog::~Dog()
 Dog	&Dog::operator=(const Dog &dog)
 {
 	std::cout << "[Dog] Assignation operator" << std::endl;
-	this->type = dog.type;
+	this->_type = dog._type;
 	return (*this);
 }
 

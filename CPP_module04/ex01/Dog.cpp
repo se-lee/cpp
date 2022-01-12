@@ -2,7 +2,8 @@
 
 Dog::Dog()
 {
-	this->type = "Dog";
+	this->_type = "Dog";
+	this->_brain = new Brain();
 	std::cout << "[Dog] Default Constructor" << std::endl;
 }
 
@@ -14,13 +15,14 @@ Dog::Dog(const Dog &dog)
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "[Dog] Destructor" << std::endl;
 }
 
 Dog	&Dog::operator=(const Dog &dog)
 {
 	std::cout << "[Dog] Assignation operator" << std::endl;
-	this->type = dog.type;
+	this->_type = dog._type;
 	return (*this);
 }
 

@@ -2,13 +2,14 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include <string>
 
 class Animal
 {
 	private:
 
 	protected:
-		std::string		type;
+		std::string		_type;
 
 	public:
 		Animal();

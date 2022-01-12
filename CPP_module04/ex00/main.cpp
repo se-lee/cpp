@@ -1,7 +1,7 @@
-#include "Animal.hpp"
+#include "Animal.hpp" //kesu
 #include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
+#include "Dog.hpp" 
+#include "WrongAnimal.hpp" //kesu
 #include "WrongCat.hpp"
 
 int main()
@@ -24,6 +24,7 @@ int main()
 	wrong_meta->makeSound();
 	wrong_cat->makeSound();
 	std::cout << std::endl;
+
 	delete meta;
 	delete dog;
 	delete cat;

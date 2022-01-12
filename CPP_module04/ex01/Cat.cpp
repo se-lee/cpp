@@ -2,7 +2,8 @@
 
 Cat::Cat()
 {
-	this->type = "Cat";
+	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "[Cat] Default constructor" << std::endl;
 }
 
@@ -14,14 +15,14 @@ Cat::Cat(const Cat &cat)
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "[Cat] Destructor" << std::endl;
 }
-
 
 Cat		&Cat::operator=(const Cat &cat)
 {
 	std::cout << "[Cat] Assignation operator" << std::endl;
-	this->type = cat.type;
+	this->_type = cat._type;
 	return (*this);
 }
 

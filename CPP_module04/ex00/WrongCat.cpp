@@ -2,7 +2,7 @@
 
 WrongCat::WrongCat()
 {
-	this->type = "Wrong Cat";
+	this->_type = "Wrong Cat";
 	std::cout << "[WrongCat] Default Constructor" << std::endl;
 }
 
@@ -20,7 +20,7 @@ WrongCat::~WrongCat()
 WrongCat	&WrongCat::operator=(const WrongCat &wrong_cat)
 {
 	std::cout << "[WrongCat] Assignation Operator" << std::endl;
-	this->type = wrong_cat.type;
+	this->_type = wrong_cat._type;
 	return (*this);
 }
 

@@ -2,7 +2,7 @@
 
 Animal::Animal()
 {
-	this->type = "Animal";
+	this->_type = "Animal";
 	std::cout << "[Animal] Default constructor" << std::endl;
 }
 
@@ -20,13 +20,13 @@ Animal::~Animal()
 Animal	&Animal::operator=(const Animal &animal)
 {
 	std::cout << "[Animal] Assignation operator" << std::endl;
-	this->type = animal.type;
+	this->_type = animal._type;
 	return (*this);
 }
 
 std::string	const &Animal::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void	Animal::makeSound() const

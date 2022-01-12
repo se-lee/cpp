@@ -2,7 +2,7 @@
 
 Cat::Cat()
 {
-	this->type = "Cat";
+	this->_type = "Cat";
 	std::cout << "[Cat] Default constructor" << std::endl;
 }
 
@@ -21,7 +21,7 @@ Cat::~Cat()
 Cat		&Cat::operator=(const Cat &cat)
 {
 	std::cout << "[Cat] Assignation operator" << std::endl;
-	this->type = cat.type;
+	this->_type = cat._type;
 	return (*this);
 }
 

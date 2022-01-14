@@ -6,13 +6,13 @@ int main()
 	std::string		*strPTR = &str;
 	std::string		&strREF	= str;
 
-	std::cout << "---------> ADDRESS <---------" << std::endl;
+	std::cout << "---------[ ADDRESS ]---------" << std::endl;
 	std::cout << "[str   ] " << &str << std::endl;
 	std::cout << "[strPTR] " << strPTR << std::endl;
 	std::cout << "[strREF] " << &strREF << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "---------> STRING <---------" << std::endl;
+	std::cout << "---------[ STRING ]---------" << std::endl;
 	std::cout << "[str   ] " << str << std::endl;
 	std::cout << "[strPTR] " << *strPTR << std::endl;
 	std::cout << "[strREF] " << strREF << std::endl;

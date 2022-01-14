@@ -67,6 +67,4 @@ void	Contact::print_contact_info_short(int index)
 
 }
 
-
-
 */

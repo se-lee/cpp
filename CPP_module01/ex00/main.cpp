@@ -3,17 +3,17 @@
 int		main()
 {
 	Zombie	zombie = Zombie("Just_Zombie on the stack");
-	Zombie	*newZombie = new Zombie("New_zombie on the heap");
-	Zombie	*zewNombie = newZombie("name");
+	Zombie	*newZombieHeap = new Zombie("New_zombie on the heap");
+	Zombie	*newZombiePtr = newZombie("name");
 	/* compile error and I have no idea why */
 	
 	zombie.announce();
-	newZombie->announce();
-	zewNombie->announce();
+	newZombieHeap->announce();
+	newZombiePtr->announce();
 	randomChump("random_zombie");
 
-	delete newZombie;
-	delete zewNombie;
+	delete newZombieHeap;
+	// delete zewNombie;
 	
 	return (0);
 }

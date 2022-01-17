@@ -17,11 +17,16 @@ class ClapTrap
 		ClapTrap(std::string name);
 		~ClapTrap();
 		
-		// ClapTrap &operator=(const ClapTrap &claptrap);
+		ClapTrap &operator=(const ClapTrap &claptrap);
+
+		void	setAttackDamage(unsigned int amount);
+		unsigned int		getAttackDamage(void);
+		std::string			getName(void);
 
 		void	attack(std::string const &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+
 };
 
 #endif

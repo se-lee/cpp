@@ -2,9 +2,20 @@
 
 int main()
 {
-	ScavTrap	a("a");
-
-	a.attack("b");
+	ScavTrap	a("A");
+	ScavTrap	b("B");
+	std::cout << "=========================================" << std::endl;
+	a.attack(b.getName());
+	b.takeDamage(a.getAttackDamage());
 	a.guardGate();
+	std::cout << "=========================================" << std::endl;
+	b.attack(a.getName());
+	a.takeDamage(b.getAttackDamage());
+	std::cout << "=========================================" << std::endl;
+	b.setAttackDamage(60);
+	b.attack(a.getName());
+	b.takeDamage(b.getAttackDamage());
+	std::cout << "=========================================" << std::endl;
+
 	return (0);
 }

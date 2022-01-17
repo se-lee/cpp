@@ -3,7 +3,7 @@
 
 Zombie::Zombie(std::string name)
 {
-	std::cout << "constructor test: " << name << std::endl;
+	std::cout << "<" << name << "> is heeeerrrreeee"<<std::endl;
 	this->_name = name;
 }
 

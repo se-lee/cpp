@@ -7,8 +7,6 @@ Contact::Contact(void)
 	this->_nickname = "";
 	this->_phone_number = "";
 	this->_darkest_secret = "";
-
-	return ;
 }
 
 Contact::~Contact(void)
@@ -47,3 +45,26 @@ void	Contact::print_contact_info_short(int index)
 		<< std::setw(10) << this->_nickname << "|" << std::endl;
 }
 
+/*
+std::string		print_info_short(std::string str)
+{
+	std::string temp;
+	if (str.length() > 10)
+	{
+		temp = str.substr(0, 9) + ".";
+		return (temp);
+	}
+	else
+		return (str);
+}
+
+void	Contact::print_contact_info_short(int index)
+{
+	std::cout << "|" << std::setw(10) << index << "|"
+		<< std::setw(10) << print_info_short(this->_first_name) << "|"
+		<< std::setw(10) << print_info_short(this->_last_name) << "|"
+		<< std::setw(10) << print_info_short(this->_nickname) << "|" << std::endl;
+
+}
+
+*/

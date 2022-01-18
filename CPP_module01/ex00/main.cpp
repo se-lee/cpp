@@ -19,7 +19,6 @@ int		main()
 	randomChump("random_zombie");
 	std::cout << std::endl;	
 	std::cout << "=========================================" << std::endl;
-	
 	delete newZombieHeap;
 	delete newZombiePtr;
 	

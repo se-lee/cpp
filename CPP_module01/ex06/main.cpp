@@ -11,8 +11,7 @@ int main(int argc, char **argv)
 	Karen		karen;
 	std::string	level = argv[1];
 	std::cout << "============================================" << std::endl << std::endl;
-	if (karen.complain(level) == 0)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	karen.complain(level);
 	std::cout << std::endl << "============================================" << std::endl;
 
 	return (0);

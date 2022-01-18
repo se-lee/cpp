@@ -21,10 +21,12 @@ int main()
 		HumanB		jim("Jim");
 		std::cout << "===================================" << std::endl << std::endl;
 
+		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+
 
 		std::cout << std::endl << "===================================" << std::endl;
 	}

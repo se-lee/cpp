@@ -7,8 +7,8 @@ Zombie::Zombie()
 
 Zombie::Zombie(std::string name)
 {
-	std::cout << "<" << name << "> Zombie String constructor called"<<std::endl;
 	this->_name = name;
+	std::cout << "<" << this->_name << "> Zombie String constructor called"<<std::endl;
 }
 
 void	Zombie::announce(void)

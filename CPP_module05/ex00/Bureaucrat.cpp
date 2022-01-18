@@ -33,25 +33,10 @@ std::ostream	&Bureaucrat::operator<<(std::ostream &out)
 
 void	Bureaucrat::incrementGrade()
 {
-	try
-	{
-		this->_grade++;	
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	this->_grade++;	
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	try
-	{
-		this->_grade--;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	this->_grade--;
 }

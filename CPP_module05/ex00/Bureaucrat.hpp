@@ -25,5 +25,7 @@ class  Bureaucrat
 		void			decrementGrade(void);
 };
 
+// Bureaucrat::GradeTooHighException
+// Bureaucrat::GradeTooLowException
 
 #endif

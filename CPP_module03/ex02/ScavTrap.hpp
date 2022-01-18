@@ -6,7 +6,7 @@
 class ScavTrap:public ClapTrap
 {
 private:
-	bool	guardGate_mode;
+	bool	_guardGate_mode;
 
 public:
 	ScavTrap();
@@ -14,6 +14,9 @@ public:
 	ScavTrap(std::string name);
 	~ScavTrap();
 
+	ScavTrap &operator=(const ScavTrap &scavtrap);
+
+	void	attack(std::string const &target);
 	void	guardGate(void);
 
 };

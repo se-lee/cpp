@@ -46,9 +46,10 @@ void	Karen::complain(std::string level)
 		if (!complain[i].level.compare(level))
 		{
 			ptr = complain[i].f_ptr;
-			(this->*ptr)(); //execute function pointer
-			break ;
+			(this->*ptr)();
+			return ;
 		}
 		i++;
 	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

@@ -1,6 +1,5 @@
 #include "Zombie.hpp"
 
-//この関数はZombieのクラス外だから_nameにアクセスできない
 Zombie	*zombieHorde( int N, std::string name )
 {
 	int		i;

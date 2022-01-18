@@ -31,16 +31,18 @@ void	Karen::_error(void)
 	std::cout << "[ ERROR ] This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void	Karen::complain(std::string level)
+int		Karen::complain(std::string level)
 {
-	t_level_func	complain[4] = 
-		{{"DEBUG", &Karen::_debug},
+	int		i = 0;
+	int		ret = 0;
+
+	t_level_func	complain[4] = {
+		{"DEBUG", &Karen::_debug},
 		{"INFO", &Karen::_info},
 		{"WARNING", &Karen::_warning},
 		{"ERROR", &Karen::_error}};
 
 	void	(Karen::*ptr)(void);
-	int		i = 0;
 	while (i < 4)
 	{
 		if (!complain[i].level.compare(level))
@@ -51,16 +53,20 @@ void	Karen::complain(std::string level)
 	switch (i) {
 		case 0:
 				ptr = complain[0].f_ptr;
-				(this->*ptr)();//execute function pointer
+				(this->*ptr)();
+				ret = 1;
 		case 1:
 				ptr = complain[1].f_ptr;
-				(this->*ptr)();		
+				(this->*ptr)();
+				ret = 1;		
 		case 2:
 				ptr = complain[2].f_ptr;
 				(this->*ptr)();
+				ret = 1;
 		case 3:
 				ptr = complain[3].f_ptr;
 				(this->*ptr)();
+				ret = 1;
 	}
-
+	return (ret);
 }

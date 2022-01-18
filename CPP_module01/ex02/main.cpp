@@ -16,6 +16,7 @@ int main()
 	std::cout << "[str   ] " << str << std::endl;
 	std::cout << "[strPTR] " << *strPTR << std::endl;
 	std::cout << "[strREF] " << strREF << std::endl;
+	std::cout << std::endl;
 
 	return (0);
 }

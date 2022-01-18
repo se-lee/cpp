@@ -14,7 +14,7 @@ private:
 public:
 	Karen(void);
 	~Karen(void);
-	void	complain(std::string level);
+	int		complain(std::string level);
 };
 
 typedef	struct s_level_func

@@ -3,7 +3,7 @@
 int	main()
 {
 	int	N = 20;
-	Zombie	*zombies = zombieHorde(N, "Zzz");
+	Zombie	*zombies = zombieHorde(N, "Zom");
 	int	i;
 
 	i = 0;
@@ -12,6 +12,7 @@ int	main()
 		zombies[i].announce();
 		i++;
 	}
+	std::cout << std::endl << "==================================" << std::endl << std::endl;
 	delete []zombies;
 	return (0);
 }

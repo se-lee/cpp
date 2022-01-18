@@ -4,17 +4,15 @@ Zombie::Zombie()
 {
 }
 
-/*
 Zombie::Zombie(std::string name)
 {
 	this->_name = name;
-	std::cout << "< " << this->_name << " > appeared (ahhhhh)" << std::endl;  
-}*/
-// default constructor じゃないからCompile errorでた。からDefault constructor作った
+	std::cout << "<" << name << "> Zombie String constructor called"<<std::endl;
+}
 
 Zombie::~Zombie(void)
 {
-	std::cout << "< " << this->_name << " > is deaaaad" << std::endl;
+	std::cout << "<" << this->_name << "> Zombie Destructor called" << std::endl;
 }
 
 void	Zombie::announce(void)

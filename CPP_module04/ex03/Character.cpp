@@ -26,6 +26,7 @@ Character::~Character()
 	std::cout << "[Character Destructor called]" << std::endl;
 }
 
+/*
 Character &Character::operator=(const Character &character)
 {
 	this->_name = character._name;
@@ -33,6 +34,7 @@ Character &Character::operator=(const Character &character)
 		this->_materia[i] = character._materia[i];
 	return (*this);
 }
+*/
 
 std::string const &Character::getName() const
 {
@@ -46,7 +48,7 @@ void	Character::equip(AMateria *m)
 		if (this->_materia[i] == NULL)
 		{
 			this->_materia[i] = m;
-			break;
+			return ;
 		}
 	}
 }

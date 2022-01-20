@@ -5,6 +5,10 @@
 # include <string>
 # include "ICharacter.hpp"
 
+# define SIZE 4
+
+class ICharacter;
+
 class AMateria
 {
 	protected:
@@ -20,6 +24,5 @@ class AMateria
 		virtual AMateria	*clone() const = 0;
 		virtual void		use(ICharacter &target);
 };
-
 
 #endif

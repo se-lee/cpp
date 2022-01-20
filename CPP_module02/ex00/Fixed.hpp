@@ -11,8 +11,8 @@ private:
 
 public:
 	Fixed(void);
-	~Fixed(void);
 	Fixed(const Fixed &fixed);
+	~Fixed(void);
 	
 	Fixed &operator=(Fixed const &fixed);
 

@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(): _Name("name"), _Hitpoint(10), _EnergyPoint(10), _AttackDam
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
 	*this = claptrap;
-	std::cout << "<" << claptrap._Name << "> copy constructor called" << std::endl;
+	std::cout << "<" << claptrap._Name << "> ClapTrap(base) copy constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _Name(name), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)

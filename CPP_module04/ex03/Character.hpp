@@ -20,6 +20,7 @@ class Character: public ICharacter
 
 		Character &Character::operator=(const Character &character);
 		void	equip(AMateria *m);
+		void	unequip(int idx);
 
 };
 

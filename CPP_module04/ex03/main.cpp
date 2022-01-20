@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string>
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+
 
 int main()
 {
-	ImateriaSource	*src = new MateriaSource();
+	IMateriaSource	*src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 

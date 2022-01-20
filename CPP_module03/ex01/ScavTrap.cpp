@@ -1,8 +1,7 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(): ClapTrap()
 {
-	this->_Name = "(name)";
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 50;
 	this->_AttackDamage = 20;
@@ -16,9 +15,8 @@ ScavTrap::ScavTrap(const ScavTrap &scavtrap)
 	std::cout << "<" << this->_Name << "> ScavTrap(derived) copy constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	this->_Name = name;
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 50;
 	this->_AttackDamage = 20;
@@ -51,5 +49,5 @@ void	ScavTrap::guardGate(void)
 {
 	if (this->_guardGate_mode == false)
 		this->_guardGate_mode = true;
-	std::cout << "ScavTrap [" << this->_Name << "] has entered the Gate Keeper Mode" << std::endl;
+	std::cout << "ScavTrap [" << this->_Name << "] is in the Gate Keeper Mode" << std::endl;
 }

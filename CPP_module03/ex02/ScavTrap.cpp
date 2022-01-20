@@ -1,7 +1,11 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(): ClapTrap()
 {
+	this->_Hitpoint = 100;
+	this->_EnergyPoint = 50;
+	this->_AttackDamage = 20;
+	this->_guardGate_mode = false;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
@@ -11,9 +15,8 @@ ScavTrap::ScavTrap(const ScavTrap &scavtrap)
 	std::cout << "<" << this->_Name << "> ScavTrap(derived) copy constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	this->_Name = name;
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 50;
 	this->_AttackDamage = 20;

@@ -1,9 +1,12 @@
-NAME = Amateria
+NAME = materia
 
-SRCS =	main.cpp		\
-		AbstAnimal.cpp	\
-		Cat.cpp			\
-		Dog.cpp			\
+SRCS =	main.cpp			\
+		AMateria.cpp		\
+		Character.cpp		\
+		Cure.cpp			\
+		Ice.cpp				\
+		MateriaSource.cpp	\
+
 
 
 GCCF = clang++ -Wall -Werror -Wextra

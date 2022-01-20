@@ -2,44 +2,44 @@
 
 int const	Fixed::_bit = 8;
 
-Fixed::Fixed()
+Fixed::Fixed(): _value(0)
 {
-//	std::cout << "Default constructor called" << std::endl;
-	this->_value = 0;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-//	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int nbr)
 {
+	// std::cout << "Int constructor called" << std::endl;
 	this->_value = nbr << this->_bit;
-//	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nbr)
 {
-//	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->_value = (int)std::roundf(nbr * (1 << this->_bit));
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
-//	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
 
 Fixed	&Fixed::operator=(const Fixed &fixed)
 {
-//	std::cout << "Assignation operator called" << std::endl;
+	// std::cout << "Assignment operator called" << std::endl;
 	this->_value = fixed._value;
 	return (*this);
 }
 
-/* --- Comparison Operator overload --- */
+/* --- Comparison Operator overloading --- */
+
 bool	Fixed::operator>(const Fixed &fixed)const
 {
 	if (fixed._value > this->_value)
@@ -89,6 +89,7 @@ bool	Fixed::operator!=(const Fixed &fixed)const
 }
 
 /* --- Arithmetic Operator overload --- */
+
 Fixed	Fixed::operator+(const Fixed &fixed)const
 {
 	Fixed	ret_fixed(fixed.toFloat() + this->toFloat());
@@ -114,13 +115,15 @@ Fixed	Fixed::operator/(const Fixed &fixed)const
 }
 
 /* --- Increment/Decrement Operator overload --- */
-Fixed	&Fixed::operator++(void) //++a
+//++a
+Fixed	&Fixed::operator++(void)
 {
 	this->_value++;
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int) //a++
+//a++
+Fixed	Fixed::operator++(int)
 {
 	Fixed	ret_fixed(*this);
 	this->_value++;

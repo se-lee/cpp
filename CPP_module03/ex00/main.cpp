@@ -14,7 +14,7 @@ int main()
 	b.attack(a.getName());
 	a.takeDamage(b.getAttackDamage());
 
-	b.beRepaired(11);
+	b.beRepaired(10);
 
 	return (0);
 }

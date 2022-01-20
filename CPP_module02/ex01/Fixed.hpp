@@ -15,7 +15,7 @@ public:
 	~Fixed(void);
 	Fixed(const int nbr);
 	Fixed(const float nbr);
-	Fixed(const Fixed &fixed); //copy constructor
+	Fixed(const Fixed &fixed);
 	
 	Fixed &operator=(const Fixed &fixed);
 
@@ -26,6 +26,5 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
-//this must be global (istream and ostream)
 
 #endif

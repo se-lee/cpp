@@ -1,21 +1,19 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(): _type(NULL)
 {
-
 }
+
+// AMateria::AMateria(std::string const &type)
+// {
+// }
 
 std::string const &AMateria::getType()const
 {
-
-}
-
-AMateria *AMateria::clone() const
-{
-
+	return (this->_type);
 }
 
 void AMateria::use(ICharacter &target)
 {
-
+	std::cout << "AMateria Use: " << target.getName() << std::endl;
 }

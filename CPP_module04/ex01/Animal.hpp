@@ -13,7 +13,7 @@ class Animal
 
 	public:
 		Animal();
-		Animal(const Animal &animal); //copy constructor;
+		Animal(const Animal &animal);
 		virtual ~Animal();
 
 		Animal &operator=(const Animal &animal);

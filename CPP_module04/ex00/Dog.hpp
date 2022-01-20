@@ -18,6 +18,7 @@ class Dog:public Animal
 
 		Dog &operator=(const Dog &dog);
 		void	makeSound() const;
+
 };
 
 #endif

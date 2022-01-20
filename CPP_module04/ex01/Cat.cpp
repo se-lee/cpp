@@ -4,29 +4,30 @@ Cat::Cat()
 {
 	this->_type = "Cat";
 	this->_brain = new Brain();
-	std::cout << "[Cat] Default constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Default constructor" << std::endl;
 }
 
 Cat::Cat(const Cat &cat)
 {
-	std::cout << "[Cat] Copy constructor" << std::endl;
 	*this = cat;
+	std::cout << "[" << this->_type << "] Copy constructor" << std::endl;
 }
 
 Cat::~Cat()
 {
 	delete this->_brain;
-	std::cout << "[Cat] Destructor" << std::endl;
+	std::cout << "[" << this->_type << "] Destructor" << std::endl;
 }
+
 
 Cat		&Cat::operator=(const Cat &cat)
 {
-	std::cout << "[Cat] Assignation operator" << std::endl;
 	this->_type = cat._type;
+	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
 	return (*this);
 }
 
 void	Cat::makeSound() const
 {
-	std::cout << "[CatSound] CCCCAAAATTTT" << std::endl;
+	std::cout << "[" << this->_type << "] CCCCAAAATTTT" << std::endl;
 }

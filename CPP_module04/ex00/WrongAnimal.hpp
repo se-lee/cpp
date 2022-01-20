@@ -9,16 +9,16 @@ class WrongAnimal
 	private:
 
 	protected:
-		std::string		_type;
+		std::string	_type;
 
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &wrong);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 
 		WrongAnimal &operator=(const WrongAnimal &wrong);
 		std::string const &getType() const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 
 };
 

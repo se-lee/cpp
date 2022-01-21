@@ -13,7 +13,7 @@ class Cat:public AbstAnimal
 
 	public:
 		Cat();
-		Cat(const Cat &cat); //copy constructor
+		Cat(const Cat &cat);
 		~Cat();
 
 		Cat	&operator=(const Cat &cat);

@@ -130,12 +130,14 @@ Fixed	Fixed::operator++(int)
 	return (ret_fixed);
 }
 
+//--a
 Fixed	&Fixed::operator--(void)
 {
 	this->_value--;
 	return (*this);
 }
 
+//a--
 Fixed	Fixed::operator--(int)
 {
 	Fixed	ret_fixed(*this);

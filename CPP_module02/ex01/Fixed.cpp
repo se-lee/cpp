@@ -32,7 +32,7 @@ Fixed::Fixed(Fixed const &fixed)
 
 Fixed	&Fixed::operator=(const Fixed &fixed)
 {
-	std::cout << "Copy assignment operatorm called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = fixed._value;
 	return (*this);
 }

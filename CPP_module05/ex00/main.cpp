@@ -9,14 +9,15 @@ int main()
 	a.decrementGrade();
 	std::cout << a.getGrade() << std::endl;
 	return 0;
-
-}
-
 /*
 
 	try
 	{
 		// actions to take
+	}
+	catch(PEBKACException &e)
+	{
+
 	}
 	catch(const std::exception& e)
 	{
@@ -24,3 +25,5 @@ int main()
 	}
 }
 */
+
+}

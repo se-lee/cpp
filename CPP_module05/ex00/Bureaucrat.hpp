@@ -5,7 +5,7 @@
 # include <string>
 # include <stdexcept>
 
-class  Bureaucrat
+class Bureaucrat
 {
 	private:
 		std::string const	_name;
@@ -17,9 +17,10 @@ class  Bureaucrat
 		Bureaucrat(const Bureaucrat &bureau);
 		~Bureaucrat();
 
-		std::string		getName(void);
-		std::ostream 	&operator<<(std::ostream &out);
-		int				getGrade(void);
+		Bureaucrat &operator=(const Bureaucrat &bureau);
+
+		std::string		getName(void) const;
+		int				getGrade(void) const;
 		void			incrementGrade(void);
 		void			decrementGrade(void);
 
@@ -36,5 +37,7 @@ class  Bureaucrat
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream 	&operator<<(std::ostream &out, const Bureaucrat &bureau);
 
 #endif

@@ -6,7 +6,9 @@
 # include <stdexcept>
 # include "Bureaucrat.hpp"
 
-class Form: public Bureaucrat
+class Bureaucrat;
+
+class Form
 {
 	private:
 		std::string const	_name;
@@ -22,12 +24,27 @@ class Form: public Bureaucrat
 
 		Form &operator=(const Form &form);
 
+		std::string const	getName() const;
+		bool				getSigned() const;
+		int					getGradeSign() const;
+		int					getGradeExecute() const;
 		void				beSigned(Bureaucrat &bureaucrat);
-		void				signForm();
+
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 
 };
 
-std::ostream	&operator<<(std::ostream &out, const Form &form, const Bureaucrat &bureaucrat);
+std::ostream	&operator<<(std::ostream &out, const Form &form);
 
 
 #endif

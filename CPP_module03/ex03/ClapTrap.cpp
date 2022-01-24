@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _Name("name"), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
+ClapTrap::ClapTrap(): _Name("(name)"), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
 	std::cout << "<" << this->_Name <<"> ClapTrap(base) default constructor called" << std::endl;
 }

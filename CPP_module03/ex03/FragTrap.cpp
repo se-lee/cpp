@@ -1,11 +1,12 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap(): ClapTrap()
 {
-	this->_Name = "(name)";
+	// this->_Name = "(name)";
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 100;
 	this->_AttackDamage = 30;
+	std::cout <<"Frag: " << this->_Hitpoint << " " << this->_EnergyPoint << " " << this->_AttackDamage << std::endl;
 	std::cout << "<" << this->_Name << "> FragTrap Default constructor called" << std::endl;
 }
 
@@ -15,12 +16,13 @@ FragTrap::FragTrap(const FragTrap &fragtrap)
 	std::cout << "<" << this->_Name << "> FragTrap Copy constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-	this->_Name = name;
+	// this->_Name = name;
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 100;
 	this->_AttackDamage = 30;
+	std::cout <<"Frag: " << this->_Hitpoint << " " << this->_EnergyPoint << " " << this->_AttackDamage << std::endl;
 	std::cout << "<" << this->_Name << "> FragTrap String constructor called" << std::endl;
 }
 
@@ -38,7 +40,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &fragtrap)
 	return (*this);
 }
 
-void	FragTrap::highFivesGuys()
+void	FragTrap::highFivesGuys() const
 {
 	std::cout << "<" << this->_Name << "> Let's high five, guys" << std::endl;
 }

@@ -2,15 +2,9 @@
 # define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-
-class FragTrap: virtual public ClapTrap
+class FragTrap: public virtual ClapTrap
 {
-	private:
-
-	protected:
-
 	public:
 		FragTrap();
 		FragTrap(const FragTrap &fragtrap);
@@ -19,7 +13,7 @@ class FragTrap: virtual public ClapTrap
 
 		FragTrap &operator=(const FragTrap &fragtrap);
 
-		void	highFivesGuys(void);
+		void	highFivesGuys(void) const;
 
 };
 

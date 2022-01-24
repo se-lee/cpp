@@ -2,7 +2,6 @@
 # define DIAMONDTRAP_HPP
 
 # include <iostream>
-# include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
@@ -22,7 +21,7 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap &operator=(const DiamondTrap &diamondtrap);
 		using	ScavTrap::attack;
 
-		void	whoAmI();
+		void	whoAmI() const;
 
 
 };

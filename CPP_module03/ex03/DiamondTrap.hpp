@@ -10,8 +10,6 @@ class DiamondTrap: public ScavTrap, public FragTrap
 	private:
 		std::string	_Name;
 
-	protected:
-
 	public:
 		DiamondTrap();
 		DiamondTrap(const DiamondTrap &diamondtrap);

@@ -24,6 +24,7 @@ int main()
 	std::cout << std::endl;
 	b.attack("C");
 	c.takeDamage(b.getAttackDamage());
+	c.beRepaired(10);
 	std::cout << std::endl;
 	std::cout << "=========================================" << std::endl;
 	std::cout << std::endl;

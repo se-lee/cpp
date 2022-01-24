@@ -7,7 +7,6 @@ DiamondTrap::DiamondTrap()
 	this->_Hitpoint = FragTrap::_Hitpoint;
 	this->_EnergyPoint = ScavTrap::_EnergyPoint;
 	this->_AttackDamage = FragTrap::_AttackDamage;
-	std::cout << this->_Hitpoint << " " << this->_EnergyPoint << " " << this->_AttackDamage << std::endl;
 	std::cout << "<" << this->_Name << "> DiamondTrap Default constructor is called" << std::endl;
 }
 
@@ -25,9 +24,7 @@ DiamondTrap::DiamondTrap(std::string name)
 	this->_EnergyPoint = ScavTrap::_EnergyPoint;
 	this->_AttackDamage = FragTrap::_AttackDamage;
 	std::cout << "<" << this->_Name << "> DiamondTrap String constructor is called" << std::endl;
-	std::cout << this->_Hitpoint << " " << this->_EnergyPoint << " " << this->_AttackDamage << std::endl;
-	std::cout << "Scav: " << ScavTrap::_Hitpoint << " " << ScavTrap::_EnergyPoint << " " << ScavTrap::_AttackDamage << std::endl;
-	std::cout << "Frag: " << FragTrap::_Hitpoint << " " << FragTrap::_EnergyPoint << " " << FragTrap::_AttackDamage << std::endl;
+	std::cout << "hp: " << this->_Hitpoint << "   energy: " << this->_EnergyPoint << "   damage: " << this->_AttackDamage << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()

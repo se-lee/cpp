@@ -8,6 +8,11 @@ class ScavTrap: public virtual ClapTrap
 private:
 	bool	_guardGate_mode;
 
+protected:
+	unsigned int	_Hitpoint;
+	unsigned int	_EnergyPoint;
+	unsigned int	_AttackDamage;
+
 public:
 	ScavTrap();
 	ScavTrap(const ScavTrap &scavtrap);

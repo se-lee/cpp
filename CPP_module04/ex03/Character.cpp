@@ -26,15 +26,14 @@ Character::~Character()
 	std::cout << "[Character Destructor called]" << std::endl;
 }
 
-/*
+
 Character &Character::operator=(const Character &character)
 {
-	this->_name = character._name;
+	this->_name = character.getName();
 	for (int i = 0; i < SIZE; i++)
 		this->_materia[i] = character._materia[i];
 	return (*this);
 }
-*/
 
 std::string const &Character::getName() const
 {
@@ -53,16 +52,15 @@ void	Character::equip(AMateria *m)
 	}
 }
 
-void	unequip(int idx)
+void	Character::unequip(int idx)
 {
-	/*idx のマテリアルをNULLに戻す。消すわけではない
-	Save the addresses before calling unequip(), or anything else, but
-don’t forget that you have to avoid memory leaks. */
-	//AMateria *tmp =	this->_materia[idx];
-	this->_materia[idx] = NULL;
+	if (idx >= 0 && idx <= 3)
+		this->_materia[idx] = NULL;
+	else
+		std::cout << "Invalid index" << std::endl;
 }
 
-void	use(int idx, ICharacter &target)
+void	Character::use(int idx, ICharacter &target)
 {
-
+	this->_materia[idx]->use(target);
 }

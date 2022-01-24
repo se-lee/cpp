@@ -14,7 +14,7 @@ void	MateriaSource::learnMateria(AMateria *materia)
 {
 	for (int i = 0; i < SIZE; i++)
 	{
-		if (this->_materiaSrc == NULL)
+		if (this->_materiaSrc[i] == NULL)
 		{
 			this->_materiaSrc[i] = materia;
 			return ;
@@ -31,4 +31,3 @@ AMateria	*MateriaSource::createMateria(std::string const &type) // ice or cure
 	else
 		return (NULL);
 }
-

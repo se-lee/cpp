@@ -7,10 +7,6 @@
 
 class FragTrap: public ClapTrap
 {
-	private:
-
-	protected:
-
 	public:
 		FragTrap();
 		FragTrap(const FragTrap &fragtrap);

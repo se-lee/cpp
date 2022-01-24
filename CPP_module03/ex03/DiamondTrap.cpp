@@ -41,7 +41,6 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 	return (*this);
 }
 
-
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "Who Am I? I am DiamonTrap <" << this->_Name 

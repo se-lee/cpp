@@ -23,6 +23,8 @@ Character::Character(const Character &character): _name(character._name)
 
 Character::~Character()
 {
+	for (int i = 0; i < SIZE; i++)
+		delete this->_materia[i];
 	// std::cout << "[Character Destructor called]" << std::endl;
 }
 
@@ -55,10 +57,10 @@ void	Character::equip(AMateria *m)
 
 void	Character::unequip(int idx)
 {
-	if (idx >= 0 && idx <= 3)
+	if (idx >= 0 && idx < SIZE)
 		this->_materia[idx] = NULL;
 	else
-		std::cout << "Invalid index" << std::endl;
+		std::cout << "Unequip Error: Invalid index" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter &target)

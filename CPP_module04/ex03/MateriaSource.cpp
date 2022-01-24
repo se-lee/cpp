@@ -8,6 +8,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < SIZE; i++)
+		delete this->_materiaSrc[i];
 }
 
 void	MateriaSource::learnMateria(AMateria *materia)

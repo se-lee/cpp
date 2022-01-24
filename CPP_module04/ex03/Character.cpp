@@ -63,5 +63,8 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter &target)
 {
-	this->_materia[idx]->use(target);
+	if (idx < 0 || idx > SIZE)
+		std::cout << "Use Error: Invalid index" << std::endl;
+	else
+		this->_materia[idx]->use(target);
 }

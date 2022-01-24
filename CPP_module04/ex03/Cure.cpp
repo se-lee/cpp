@@ -31,6 +31,7 @@ Cure	&Cure::operator=(const Cure &cure)
 AMateria	*Cure::clone() const
 {
 	AMateria	*cureClone = new Cure("new_cure");
+	std::cout << "New Clone created: [" << cureClone->getType() << "]" << std::endl;
 	return (cureClone);
 }
 

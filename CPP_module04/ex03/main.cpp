@@ -22,6 +22,9 @@ std::cout << std::endl;
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	AMateria	*tmp2;
+	tmp2 = tmp->clone();
+	me->equip(tmp2);
 
 std::cout << std::endl;
 
@@ -31,6 +34,14 @@ std::cout << std::endl;
 
 	me->use(0, *bob);
 	me->use(1, *bob);
+
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	bob->use(5, *me);
+
+std::cout << std::endl;
 
 	delete bob;
 	delete me;

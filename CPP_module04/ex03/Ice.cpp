@@ -2,17 +2,17 @@
 
 Ice::Ice(): AMateria("ice")
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	// std::cout << "Ice default constructor called" << std::endl;
 }
 
 Ice::Ice(std::string const &type): AMateria(type)
 {
-	std::cout << "Ice parameter constructor called" << std::endl;
+	// std::cout << "Ice parameter constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &ice)
 {
-	std::cout << "Ice copy constructor called" << std::endl;
+	// std::cout << "Ice copy constructor called" << std::endl;
 	*this = ice;
 }
 
@@ -24,7 +24,7 @@ Ice		&Ice::operator=(const Ice &ice)
 
 Ice::~Ice()
 {
-	std::cout << "Ice destructor called" << std::endl;
+	// std::cout << "Ice destructor called" << std::endl;
 }
 
 std::string const	&Ice::getType() const

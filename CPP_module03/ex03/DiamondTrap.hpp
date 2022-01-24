@@ -17,11 +17,11 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		~DiamondTrap();
 
 		DiamondTrap &operator=(const DiamondTrap &diamondtrap);
+
 		using	ScavTrap::attack;
-
+	
 		void	whoAmI() const;
-
-
+		void	beRepaired(unsigned int amount);
 };
 
 #endif

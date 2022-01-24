@@ -2,6 +2,10 @@
 
 ClapTrap::ClapTrap(): _Name("(name)"), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
+	// this->_Name = "(name)";
+	// this->_Hitpoint = 10;
+	// this->_EnergyPoint = 10;
+	// this->_AttackDamage = 0;
 	std::cout << "<" << this->_Name <<"> ClapTrap(base) default constructor called" << std::endl;
 }
 
@@ -11,8 +15,12 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 	std::cout << "<" << claptrap._Name << "> ClapTrap(base) copy constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): _Name(name), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _Name(name), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
+	// this->_Name = name;
+	// this->_Hitpoint = 10;
+	// this->_EnergyPoint = 10;
+	// this->_AttackDamage = 0;
 	std::cout << "<" << this->_Name << "> ClapTrap(base) string constructor called" << std::endl;
 }
 
@@ -64,17 +72,21 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_EnergyPoint >= amount)
-	{
-		this->_EnergyPoint -= amount;
-		this->_Hitpoint += amount;
-	}
+	if (this->_EnergyPoint <= 0)
+		std::cout << "No energy point left" << std::endl;
 	else
 	{
-		this->_Hitpoint += this->_EnergyPoint;
-		this->_EnergyPoint = 0;
+		if (this->_EnergyPoint >= amount)
+		{
+			this->_Hitpoint += amount;
+			this->_EnergyPoint -= amount;
+		}
+		else
+		{
+			this->_Hitpoint += this->_EnergyPoint;
+			this->_EnergyPoint = 0;
+		}
+		std::cout << "ClapTrap [" << this->_Name << "] gained [" << amount <<
+		"] hit points. Current energy point: [" << this->_EnergyPoint <<"]; " << "Current hit point: [" << this->_Hitpoint << "]" << std::endl;
 	}
-	std::cout << "ClapTrap [" << this->_Name << "] gained [" << amount <<
-	"] hit points. Current energy point: [" << this->_EnergyPoint <<"]; " << "Current hit point: [" << this->_Hitpoint << "]" << std::endl;
 }
-

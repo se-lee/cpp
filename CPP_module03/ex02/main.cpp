@@ -9,9 +9,11 @@ int main()
 	std::cout << "==============================" << std::endl << std::endl;
 	a.attack("b");
 	b.takeDamage(a.getAttackDamage());
+	b.beRepaired(10);
 	std::cout << std::endl;
 	b.attack("a");
 	a.takeDamage(b.getAttackDamage());
+	a.beRepaired(10);
 	std::cout << std::endl;
 	a.attack("b");
 	b.takeDamage(a.getAttackDamage());

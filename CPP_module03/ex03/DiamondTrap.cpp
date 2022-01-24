@@ -5,7 +5,7 @@ DiamondTrap::DiamondTrap()
 	this->_Name = "(name)";
 	ClapTrap::_Name = this->_Name + "_clap_name";
 	this->_Hitpoint = FragTrap::_Hitpoint;
-	this->_EnergyPoint = ScavTrap::_EnergyPoint;
+	this->_EnergyPoint = 50;
 	this->_AttackDamage = FragTrap::_AttackDamage;
 	std::cout << "<" << this->_Name << "> DiamondTrap Default constructor is called" << std::endl;
 }
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(std::string name)
 	this->_Name = name;
 	ClapTrap::_Name = this->_Name + "_clap_name";
 	this->_Hitpoint = FragTrap::_Hitpoint;
-	this->_EnergyPoint = ScavTrap::_EnergyPoint;
+	this->_EnergyPoint = 50;
 	this->_AttackDamage = FragTrap::_AttackDamage;
 	std::cout << "<" << this->_Name << "> DiamondTrap String constructor is called" << std::endl;
 	std::cout << "hp: " << this->_Hitpoint << "   energy: " << this->_EnergyPoint << "   damage: " << this->_AttackDamage << std::endl;
@@ -31,7 +31,6 @@ DiamondTrap::~DiamondTrap()
 {
 	std::cout << "<" << this->_Name << "> DiamondTrap Destructor is called" << std::endl;
 }
-
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 {

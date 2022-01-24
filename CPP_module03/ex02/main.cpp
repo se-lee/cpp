@@ -6,7 +6,7 @@ int main()
 	FragTrap	a("a");
 	ScavTrap	b("b");
 
-	std::cout << "==============================" << std::endl;
+	std::cout << "==============================" << std::endl << std::endl;
 	a.attack("b");
 	b.takeDamage(a.getAttackDamage());
 	std::cout << std::endl;
@@ -22,7 +22,7 @@ int main()
 	b.guardGate();
 	std::cout << std::endl;
 	a.highFivesGuys();
-	std::cout << "==============================" << std::endl;
+	std::cout << std::endl << "==============================" << std::endl;
 
 	return (0);
 

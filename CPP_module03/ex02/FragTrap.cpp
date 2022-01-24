@@ -5,7 +5,7 @@ FragTrap::FragTrap(): ClapTrap()
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 100;
 	this->_AttackDamage = 30;
-	std::cout << "<" << this->_Name << "> FragTrap Default constructor called" << std::endl;
+	std::cout << "<" << this->_Name << "> FragTrap(derived) default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
@@ -13,18 +13,18 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 100;
 	this->_AttackDamage = 30;
-	std::cout << "<" << this->_Name << "> FragTrap String constructor called" << std::endl;
+	std::cout << "<" << this->_Name << "> FragTrap(derived) string constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &fragtrap)
 {
 	*this = fragtrap;
-	std::cout << "<" << this->_Name << "> FragTrap Copy constructor called" << std::endl;
+	std::cout << "<" << this->_Name << "> FragTrap(derived) copy constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "<" << this->_Name << "> FragTrap Destructor called" << std::endl;
+	std::cout << "<" << this->_Name << "> FragTrap(derived) destructor called" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &fragtrap)
@@ -38,5 +38,5 @@ FragTrap	&FragTrap::operator=(const FragTrap &fragtrap)
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "<" << this->_Name << "> Let's high five, guys" << std::endl;
+	std::cout << "FragTrap [" << this->_Name << "] Let's high five ! " << std::endl;
 }

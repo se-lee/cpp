@@ -66,6 +66,11 @@ const char	*Form::GradeTooLowException::what() const throw()
 	return ("Form grade is too low");
 }
 
+const char	*Form::FormNotSignedException::what() const throw()
+{
+	return ("Form not sigend");
+}
+
 std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
 	out << "The form named, " << form.getName() << " requires Grade " << form.getGradeSign() << " to sign and Grade " << form.getGradeExecute() << " to execute." << std::endl;

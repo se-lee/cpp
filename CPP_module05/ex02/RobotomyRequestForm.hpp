@@ -10,13 +10,18 @@ class Bureaucrat;
 
 class RobotomyRequestForm: public Form
 {
+	private:
+		std::string		_target;
+
 	public:
 		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &source);
 		~RobotomyRequestForm();
 
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &source); 
-
+		std::string		getTarget() const;
+		void	robotize();
 		void	execute(Bureaucrat const &executor);
 };
 

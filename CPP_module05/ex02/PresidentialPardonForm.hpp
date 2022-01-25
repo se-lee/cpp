@@ -11,14 +11,17 @@ class Bureaucrat;
 class PresidentialPardonForm: public Form
 {
 	private:
+		std::string		_target;
 
 	public:
 		PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &source);
 		~PresidentialPardonForm();
 
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &source);
 
+		void	pardon();
 		void	execute(Bureaucrat const &executor);
 	};
 

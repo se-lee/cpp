@@ -42,12 +42,6 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw GradeTooLowException();
 	else
 		std::cout << "(LOUD DRILLING NOISES) [" << this->_target << "] has been robotomized"<< std::endl;
-/*
-Makes some drilling noises. 
-Then, informs that <target> has been robotomized
-successfully 50% of the time. 
-Otherwise, informs that the robotomy failed
-*/
 }
 
 

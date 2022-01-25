@@ -52,9 +52,42 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		}
 		else
 		{
-			out_file << "Very nice big green tree" << std::endl;
+			out_file << "_" << std::endl;
+			out_file << "| | " << std::endl;
+			out_file << "| |_ _ __ ___  ___ " << std::endl;
+			out_file << "| __| '__/ _ \\/ _ \\" << std::endl;
+			out_file << "| |_| | |  __/  __/" << std::endl;
+			out_file << " \\__|_|  \\___|\\___|" << std::endl;
+			out_file << std::endl;
+			out_file << "                                                     ." << std::endl;
+			out_file << "                                              .         ;  " << std::endl;
+			out_file << "                 .              .              ;%     ;;   " << std::endl;
+			out_file << "                   ,           ,                :;%  %;   " << std::endl;
+			out_file << "                    :         ;                   :;%;'     .,   " << std::endl;
+			out_file << "           ,.        %;     %;            ;        %;'    ,; " << std::endl;
+			out_file << "             ;       ;%;  %%;        ,     %;    ;%;    ,%' " << std::endl;
+			out_file << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+			out_file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+			out_file << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+			out_file << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+			out_file << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+			out_file << "                      `@%:.  :;%.         ;@@%;'   " << std::endl;
+			out_file << "                        `@%.  `;@%.      ;@@%;         " << std::endl;
+			out_file << "                          `@%%. `@%%    ;@@%;        " << std::endl;
+			out_file << "                            ;@%. :@%%  %@@%;       " << std::endl;
+			out_file << "                              %@bd%%%bd%%:;     " << std::endl;
+			out_file << "                                #@%%%%%:;;" << std::endl;
+			out_file << "                                %@@%%%::;" << std::endl;
+			out_file << "                                %@@@%(o);  . '         " << std::endl;
+			out_file << "                                %@@@o%;:(.,'         " << std::endl;
+			out_file << "                            `.. %@@@o%::;         " << std::endl;
+			out_file << "                               `)@@@o%::;         " << std::endl;
+			out_file << "                                %@@(o)::;        " << std::endl;
+			out_file << "                               .%@@@@%::;         " << std::endl;
+			out_file << "                               ;%@@@@%::;.          " << std::endl;
+			out_file << "                              ;%@@@@%%:;;;. " << std::endl;
+			out_file << "                          ...;%@@@@@%%:;;;;,..  " << std::endl << std::endl;
 		}
 		out_file.close();
 	}
-		
 }

@@ -19,7 +19,7 @@ class ClapTrap
 		
 		ClapTrap &operator=(const ClapTrap &claptrap);
 
-		void	setAttackDamage(unsigned int amount);
+		void				setAttackDamage(unsigned int amount);
 		unsigned int		getAttackDamage(void);
 		std::string			getName(void);
 

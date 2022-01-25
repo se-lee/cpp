@@ -2,10 +2,6 @@
 
 ClapTrap::ClapTrap(): _Name("(name)"), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	// this->_Name = "(name)";
-	// this->_Hitpoint = 10;
-	// this->_EnergyPoint = 10;
-	// this->_AttackDamage = 0;
 	std::cout << "<" << this->_Name <<"> ClapTrap(base) default constructor called" << std::endl;
 }
 
@@ -17,10 +13,6 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 
 ClapTrap::ClapTrap(std::string name) : _Name(name), _Hitpoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	// this->_Name = name;
-	// this->_Hitpoint = 10;
-	// this->_EnergyPoint = 10;
-	// this->_AttackDamage = 0;
 	std::cout << "<" << this->_Name << "> ClapTrap(base) string constructor called" << std::endl;
 }
 

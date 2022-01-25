@@ -3,8 +3,8 @@
 int main()
 {
 
-	FragTrap	a("a");
-	ScavTrap	b("b");
+	FragTrap	a("Frag_a");
+	ScavTrap	b("Scav_b");
 
 	std::cout << "==============================" << std::endl << std::endl;
 	a.attack("b");

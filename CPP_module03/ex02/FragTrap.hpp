@@ -2,8 +2,6 @@
 # define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-
 
 class FragTrap: public ClapTrap
 {
@@ -15,6 +13,7 @@ class FragTrap: public ClapTrap
 
 		FragTrap &operator=(const FragTrap &fragtrap);
 
+		void	attack(std::string const &target);
 		void	highFivesGuys(void);
 
 };

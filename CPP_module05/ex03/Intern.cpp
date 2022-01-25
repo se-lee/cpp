@@ -52,10 +52,11 @@ Form	*Intern::makeForm(std::string formName, std::string formTarget)
 			ret = new PresidentialPardonForm(formTarget);
 			break ;
 		default:
-			std::cout << "Invalid form name" << std::endl;
 			ret = NULL;
 	}
-	// if (ret != NULL)
+	if (ret == NULL)	
+		std::cout << "Invalid form name" << std::endl;
+	else	
 		std::cout << "Intern creates " << formName << std::endl;
 	return (ret);
 }

@@ -1,11 +1,9 @@
-#include "Animal.hpp"
-#include "Brain.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-	int size = 2;
+	int size = 6;
 	Animal	*animal[size];
 
 	for (int i = 0; i < size; i++)
@@ -27,7 +25,7 @@ int main()
 	brain.setIdeas("wonderful idea.", 2);
 
 	for (int i = 0; i < 3; i++)
-		std::cout << brain.getIdeas(i);
+		std::cout << brain.getIdeas(i) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "========<< DEEP COPY >>=========" << std::endl;
@@ -46,11 +44,8 @@ int main()
 	std::cout << "copy addr  : " << &dogCopy << std::endl;
 	std::cout << "- - - - - - - - - - - - - - - - -" << std::endl;
 
-/*
 	std::cout << "--------------------------------" << std::endl;
 	std::cout << "copy: " << &dogCopy << std::endl;	
-
-
 	std::cout << "--------------------------------" << std::endl;
 
 	Cat	catOriginal;
@@ -59,7 +54,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "catOriginal: " << &catOriginal << std::endl;
 	std::cout << "catCopy: " << &catCopy << std::endl;
-*/
+	std::cout << "--------------------------------" << std::endl;
 
 	for (int i = 0; i < size; i++)
 	{
@@ -67,5 +62,7 @@ int main()
 		delete animal[i];
 		std::cout << "----------------------" << std::endl;
 	}
+	// delete *animal;
+
 	return (0);
 }

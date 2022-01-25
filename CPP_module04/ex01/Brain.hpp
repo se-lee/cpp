@@ -2,12 +2,9 @@
 # define BRAIN_HPP
 
 # include <iostream>
-# include <string>
 
 class Brain
 {
-	private:
-	
 	protected:
 		std::string		_ideas[100];
 

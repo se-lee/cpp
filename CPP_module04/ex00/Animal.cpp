@@ -2,24 +2,29 @@
 
 Animal::Animal(): _type("Animal")
 {
-	std::cout << "[" << this->_type << "] Animal Default constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Animal default constructor" << std::endl;
+}
+
+Animal::Animal(std::string type): _type(type)
+{
+	std::cout << "[" << this->_type << "] Animal string constructor" << std::endl;
 }
 
 Animal::Animal(const Animal &animal)
 {
 	*this = animal;
-	std::cout << "[" << this->_type << "] Animal Copy constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Animal copy constructor" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "[" << this->_type << "] Animal Destructor" << std::endl;
+	std::cout << "[" << this->_type << "] Animal destructor" << std::endl;
 }
 
 Animal	&Animal::operator=(const Animal &animal)
 {
 	this->_type = animal._type;
-	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
+	std::cout << "[" << this->_type << "] Assignment operator" << std::endl;
 	return (*this);
 }
 

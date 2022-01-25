@@ -1,8 +1,7 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog(): Animal("Dog")
 {
-	this->_type = "Dog";
 	std::cout << "[" << this->_type << "] Default Constructor" << std::endl;
 }
 
@@ -19,8 +18,8 @@ Dog::~Dog()
 
 Dog	&Dog::operator=(const Dog &dog)
 {
-	this->_type = dog._type;
 	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
+	this->_type = dog._type;
 	return (*this);
 }
 

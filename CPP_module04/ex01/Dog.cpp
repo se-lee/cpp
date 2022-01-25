@@ -1,19 +1,15 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog(): Animal("Dog")
 {
-	this->_type = "Dog";
 	this->_brain = new Brain();
 	std::cout << "[" << this->_type << "] Default Constructor" << std::endl;
 }
 
 Dog::Dog(const Dog &dog)
 {
-	this->_type = dog._type;
-	this->_brain = new Brain();
 	*this = dog;
 	std::cout << "[" << this->_type << "] Copy Constructor" << std::endl;
-	
 }
 
 Dog::~Dog()

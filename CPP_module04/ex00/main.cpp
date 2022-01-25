@@ -14,6 +14,7 @@ int main()
 	const WrongAnimal	*wrong_meta = new WrongAnimal();
 	std::cout << "==================================" << std::endl;
 	const WrongAnimal	*wrong_cat	= new WrongCat();
+	const WrongCat		*real_wrong_cat = new WrongCat();
 	std::cout << std::endl;
 	std::cout << "==========< Print Type >==========" << std::endl;
 	std::cout << "[DogType] " << dog->getType() << std::endl;
@@ -26,6 +27,7 @@ int main()
 	meta->makeSound();
 	wrong_meta->makeSound();
 	wrong_cat->makeSound();
+	real_wrong_cat->makeSound();
 	std::cout << std::endl;
 
 	std::cout << "==================================" << std::endl;

@@ -1,8 +1,11 @@
 NAME = complex_forms
 
-SRCS =	main.cpp		\
-		Bureaucrat.cpp	\
-		Form.cpp		\
+SRCS =	main.cpp					\
+		Bureaucrat.cpp				\
+		Form.cpp					\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp	\
 
 GCCF = clang++ -Wall -Werror -Wextra -std=c++98
 

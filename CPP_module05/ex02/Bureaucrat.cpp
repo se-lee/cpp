@@ -70,6 +70,7 @@ void	Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signForm(Form &form)
 {
+	form.beSigned(*this);
 	if (form.getSigned() == true)
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	else
@@ -94,5 +95,5 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 
 void	Bureaucrat::executeForm(Form const &form)
 {
-	
+	std::cout << "[" << this->_name << "] executed the form [" << form.getName() << "]" << std::endl;
 }

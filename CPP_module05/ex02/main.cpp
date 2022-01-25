@@ -7,9 +7,11 @@
 int main()
 {
 	Bureaucrat a("Worker_A", 1);
-	Form	*shrub = new ShrubberyCreationForm("shrub");
-	std::cout << "-------------" << std::endl;
+	ShrubberyCreationForm	shrub("Shrub");
 
+	std::cout << "-------------" << std::endl;
+	a.signForm(shrub);
+	shrub.execute(a);
 
 	// std::cout << "start: " << a; 
 	// std::cout << "Form start: " << test_form;

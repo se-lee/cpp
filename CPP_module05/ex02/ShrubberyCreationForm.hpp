@@ -22,8 +22,7 @@ class ShrubberyCreationForm: public Form
 
 		std::string getTarget() const;
 
-		void	createShrubbery();
-		void	execute(Bureaucrat const &executor);
+		void	execute(Bureaucrat const &executor) const;
 
 };
 

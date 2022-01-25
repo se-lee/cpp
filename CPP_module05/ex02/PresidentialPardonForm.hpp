@@ -21,8 +21,7 @@ class PresidentialPardonForm: public Form
 
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &source);
 
-		void	pardon();
-		void	execute(Bureaucrat const &executor);
+		void	execute(Bureaucrat const &executor) const;
 	};
 
 #endif

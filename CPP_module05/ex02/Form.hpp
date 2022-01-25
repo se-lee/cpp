@@ -19,7 +19,7 @@ class Form
 		Form();
 		Form(std::string const name, int gradeSign, int gradeExe);
 		Form(const Form &form);
-		~Form();
+		virtual ~Form();
 
 		Form &operator=(const Form &form);
 

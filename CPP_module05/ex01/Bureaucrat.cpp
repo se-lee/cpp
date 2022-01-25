@@ -70,6 +70,7 @@ void	Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signForm(Form &form)
 {
+	form.beSigned(*this);
 	if (form.getSigned() == true)
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	else

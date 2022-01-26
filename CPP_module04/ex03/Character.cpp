@@ -12,10 +12,9 @@ Character::Character(std::string name): _name(name)
 		this->_materia[i] = NULL;
 }
 
-Character::Character(const Character &character): _name(character._name)
+Character::Character(const Character &character)
 {
-	for (int i = 0; i < SIZE; i++)
-		this->_materia[i] = character._materia[i];
+	*this = character;
 }
 
 Character::~Character()
@@ -28,7 +27,12 @@ Character &Character::operator=(const Character &character)
 {
 	this->_name = character.getName();
 	for (int i = 0; i < SIZE; i++)
-		this->_materia[i] = character._materia[i];
+	{
+		if (this->_materia[i])
+			delete this->_materia[i];
+		if (character._materia[i])
+			this->_materia[i] = character._materia[i]->clone();
+	}
 	return (*this);
 }
 

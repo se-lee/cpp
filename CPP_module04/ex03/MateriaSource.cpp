@@ -22,7 +22,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &materia)
 	for (int i = 0; i < SIZE; i++)
 		delete this->_materiaSrc[i];
 	for (int i = 0; i < SIZE; i++)
-		this->_materiaSrc[i] = materia._materiaSrc[i];
+		this->_materiaSrc[i] = materia._materiaSrc[i]->clone();
 	return (*this);
 }
 

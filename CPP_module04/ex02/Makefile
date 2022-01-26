@@ -1,10 +1,10 @@
-NAME = AbstractAnimal
+NAME = Abstract_Animal
 
 SRCS =	main.cpp		\
-		AbstAnimal.cpp	\
+		AAnimal.cpp	\
 		Cat.cpp			\
 		Dog.cpp			\
-
+		Brain.cpp		\
 
 GCCF = clang++ -Wall -Werror -Wextra -std=c++98
 

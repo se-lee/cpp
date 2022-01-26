@@ -1,15 +1,13 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include <iostream>
-# include <string>
-# include "AbstAnimal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Cat:public AbstAnimal
+class Cat: public AAnimal
 {
 	private:
-
-	protected:
+		Brain	*_brain;
 
 	public:
 		Cat();
@@ -17,7 +15,10 @@ class Cat:public AbstAnimal
 		~Cat();
 
 		Cat	&operator=(const Cat &cat);
-		void	makeSound() const;
+
+		std::string	&getIdeas(int i) const;
+		void		setIdeas(std::string newIdeas, int i);
+		void		makeSound() const;
 };
 
 #endif

@@ -2,43 +2,43 @@
 
 Dog::Dog(): Animal("Dog")
 {
-	std::cout << "[" << this->_type << "] Default Constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Dog default constructor" << std::endl;
 	this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog &dog)
 {
-	std::cout << "[" << this->_type << "] Copy Constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Dog copy constructor" << std::endl;
 	*this = dog;
 }
 
 Dog::~Dog()
 {
-	std::cout << "[" << this->_type << "] Destructor" << std::endl;
+	std::cout << "[" << this->_type << "] Dog destructor" << std::endl;
 	delete this->_brain;
 }
 
 Dog	&Dog::operator=(const Dog &dog)
 {
-	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
+	std::cout << "[" << this->_type << "] Dog assignment operator" << std::endl;
 	this->_type = dog._type;
-	this->_brain = dog._brain;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdeas(dog.getIdeas(i), i);
 	return (*this);
 }
 
-void	Dog::makeSound() const
+std::string	&Dog::getIdeas(int i) const
 {
-	std::cout << "[" << this->_type << "] DDDOOOOOOGGGGGG!" << std::endl;
+	return (this->_brain->getIdeas(i));
 }
 
-void	Dog::setNewIdeas(std::string newIdeas, int i)
+void	Dog::setIdeas(std::string newIdeas, int i)
 {
 	this->_brain->setIdeas(newIdeas, i);
 }
 
-void	Dog::printIdeas()
+void	Dog::makeSound() const
 {
-	for (int i = 0; i < 100; i++)
-		std::cout << this->_brain->getIdeas(i);
-	std::cout << std::endl;
+	std::cout << "[" << this->_type << "] DOOOOOOGGGGGG!" << std::endl;
 }

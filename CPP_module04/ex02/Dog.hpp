@@ -1,23 +1,24 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include <iostream>
-# include <string>
-# include "AbstAnimal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Dog:public AbstAnimal
+class Dog: public AAnimal
 {
 	private:
-
-	protected:
+		Brain	*_brain;
 
 	public:
 		Dog();
-		Dog(const Dog &dog); //copy
+		Dog(const Dog &dog);
 		~Dog();
 
 		Dog &operator=(const Dog &dog);
-		void	makeSound() const;
+
+		std::string	&getIdeas(int i) const;
+		void		setIdeas(std::string newIdeas, int i);
+		void		makeSound() const;
 };
 
 #endif

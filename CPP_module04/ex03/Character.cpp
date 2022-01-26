@@ -2,21 +2,18 @@
 
 Character::Character(): _name("(name)")
 {
-	// std::cout << "[Character Default constructor called]" << std::endl;
 	for (int i = 0; i < SIZE; i++)
 		this->_materia[i] = NULL;
 }
 
 Character::Character(std::string name): _name(name)
 {
-	std::cout << "New character appeared [" << this->_name << "]" << std::endl;
 	for (int i = 0; i < SIZE; i++)
 		this->_materia[i] = NULL;
 }
 
 Character::Character(const Character &character): _name(character._name)
 {
-	// std::cout << "[Character Copy constructor called]" << std::endl;
 	for (int i = 0; i < SIZE; i++)
 		this->_materia[i] = character._materia[i];
 }
@@ -25,12 +22,10 @@ Character::~Character()
 {
 	for (int i = 0; i < SIZE; i++)
 		delete this->_materia[i];
-	// std::cout << "[Character Destructor called]" << std::endl;
 }
 
 Character &Character::operator=(const Character &character)
 {
-	std::cout << "Character assignment operator" << std::endl;
 	this->_name = character.getName();
 	for (int i = 0; i < SIZE; i++)
 		this->_materia[i] = character._materia[i];
@@ -49,7 +44,6 @@ void	Character::equip(AMateria *m)
 		if (this->_materia[i] == NULL)
 		{
 			this->_materia[i] = m;
-			std::cout << "New Materia equipped [" << this->_materia[i]->getType() << "]" << std::endl;
 			return ;
 		}
 	}
@@ -58,7 +52,9 @@ void	Character::equip(AMateria *m)
 void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < SIZE)
+	{
 		this->_materia[idx] = NULL;
+	}
 	else
 		std::cout << "Unequip Error: Invalid index" << std::endl;
 }
@@ -68,5 +64,10 @@ void	Character::use(int idx, ICharacter &target)
 	if (idx < 0 || idx > SIZE)
 		std::cout << "Use Error: Invalid index" << std::endl;
 	else
-		this->_materia[idx]->use(target);
+	{
+		if (this->_materia[idx] != NULL)
+			this->_materia[idx]->use(target);
+		else	
+			std::cout << "Empty" << std::endl;
+	}
 }

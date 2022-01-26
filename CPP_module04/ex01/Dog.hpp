@@ -15,10 +15,10 @@ class Dog: public Animal
 		~Dog();
 
 		Dog &operator=(const Dog &dog);
-		void	makeSound() const;
 
-		void	setNewIdeas(std::string newIdeas, int i);
-		void	printIdeas();
+		std::string	&getIdeas(int i) const;
+		void		setIdeas(std::string newIdeas, int i);
+		void		makeSound() const;
 };
 
 #endif

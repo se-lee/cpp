@@ -2,28 +2,40 @@
 
 Cat::Cat(): Animal("Cat")
 {
+	std::cout << "[" << this->_type << "] Cat default constructor" << std::endl;
 	this->_brain = new Brain();
-	std::cout << "[" << this->_type << "] Default constructor" << std::endl;
 }
 
 Cat::Cat(const Cat &cat)
 {
+	std::cout << "[" << this->_type << "] Cat copy constructor" << std::endl;
 	*this = cat;
-	std::cout << "[" << this->_type << "] Copy constructor" << std::endl;
 }
 
 Cat::~Cat()
 {
+	std::cout << "[" << this->_type << "] Cat destructor" << std::endl;
 	delete this->_brain;
-	std::cout << "[" << this->_type << "] Destructor" << std::endl;
 }
-
 
 Cat		&Cat::operator=(const Cat &cat)
 {
+	std::cout << "[" << this->_type << "] Cat assignment operator" << std::endl;
 	this->_type = cat._type;
-	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdeas(cat.getIdeas(i), i);
 	return (*this);
+}
+
+std::string	&Cat::getIdeas(int i) const
+{
+	return (this->_brain->getIdeas(i));
+}
+
+void	Cat::setIdeas(std::string newIdeas, int i)
+{
+	this->_brain->setIdeas(newIdeas, i);
 }
 
 void	Cat::makeSound() const

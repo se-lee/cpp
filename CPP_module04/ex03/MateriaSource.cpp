@@ -6,10 +6,24 @@ MateriaSource::MateriaSource()
 		this->_materiaSrc[i] = NULL;
 }
 
+MateriaSource::MateriaSource(const MateriaSource &materia)
+{
+	*this = materia;
+}
+
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < SIZE; i++)
 		delete this->_materiaSrc[i];
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &materia)
+{
+	for (int i = 0; i < SIZE; i++)
+		delete this->_materiaSrc[i];
+	for (int i = 0; i < SIZE; i++)
+		this->_materiaSrc[i] = materia._materiaSrc[i];
+	return (*this);
 }
 
 void	MateriaSource::learnMateria(AMateria *materia)
@@ -18,25 +32,18 @@ void	MateriaSource::learnMateria(AMateria *materia)
 	{
 		if (this->_materiaSrc[i] == NULL)
 		{
-			std::cout << "New Materia learned: [" << materia->getType() << "]" << std::endl;
 			this->_materiaSrc[i] = materia;
 			return ;
 		}
 	}
 }
 
-AMateria	*MateriaSource::createMateria(std::string const &type) // ice or cure
+AMateria	*MateriaSource::createMateria(std::string const &type)
 {
 	if (type == "ice")
-	{
-		std::cout << "New Materia created: [" << type << "]" << std::endl;
 		return (new Ice());
-	}
 	else if (type == "cure")
-	{
-		std::cout << "New Materia created: [" << type << "]" << std::endl;
 		return (new Cure());
-	}
 	else
 		return (NULL);
 }

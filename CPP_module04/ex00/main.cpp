@@ -14,7 +14,7 @@ int main()
 	const WrongAnimal	*wrong_meta = new WrongAnimal();
 	std::cout << "==================================" << std::endl;
 	const WrongAnimal	*wrong_cat	= new WrongCat();
-	const WrongCat		*real_wrong_cat = new WrongCat();
+	const WrongCat		*real_wrong_cat = new WrongCat("Real Wrong Cat");
 	std::cout << std::endl;
 	std::cout << "==========< Print Type >==========" << std::endl;
 	std::cout << "[DogType] " << dog->getType() << std::endl;
@@ -38,7 +38,9 @@ int main()
 	delete cat;
 	std::cout << "==================================" << std::endl;
 	delete wrong_meta;
-	std::cout << "==================================" << std::endl;
 	delete wrong_cat;
+	delete real_wrong_cat;
 	std::cout << "==================================" << std::endl;
+
+	return 0;
 }

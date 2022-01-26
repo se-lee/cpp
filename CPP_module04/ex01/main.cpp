@@ -18,6 +18,7 @@ int main()
 	}
 
 	std::cout << "========<< BRAIN >>=========" << std::endl;
+	
 	Brain	brain;
 
 	brain.setIdeas("I have ", 0);
@@ -62,7 +63,7 @@ int main()
 		delete animal[i];
 		std::cout << "----------------------" << std::endl;
 	}
-	// delete *animal;
+	delete *animal;
 
 	return (0);
 }

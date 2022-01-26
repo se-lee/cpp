@@ -11,6 +11,7 @@ class WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &wrong);
+		WrongAnimal(std::string type);
 		~WrongAnimal();
 
 		WrongAnimal &operator=(const WrongAnimal &wrong);

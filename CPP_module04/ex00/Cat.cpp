@@ -2,30 +2,29 @@
 
 Cat::Cat(): Animal("Cat")
 {
-	// this->_type = "Cat";
-	std::cout << "[" << this->_type << "] Default constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Cat default constructor" << std::endl;
 }
 
 Cat::Cat(const Cat &cat)
 {
 	*this = cat;
-	std::cout << "[" << this->_type << "] Copy constructor" << std::endl;
+	std::cout << "[" << this->_type << "] Cat copy constructor" << std::endl;
 }
 
 Cat::~Cat()
 {
-	std::cout << "[" << this->_type << "] Destructor" << std::endl;
+	std::cout << "[" << this->_type << "] Cat destructor" << std::endl;
 }
 
 
 Cat		&Cat::operator=(const Cat &cat)
 {
 	this->_type = cat._type;
-	std::cout << "[" << this->_type << "] Assignation operator" << std::endl;
+	std::cout << "[" << this->_type << "] Cat assignment operator" << std::endl;
 	return (*this);
 }
 
 void	Cat::makeSound() const
 {
-	std::cout << "[" << this->_type << "] CCCCAAAATTTT" << std::endl;
+	std::cout << "[" << this->_type << "] CAAAATTTT" << std::endl;
 }

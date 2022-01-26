@@ -2,20 +2,20 @@
 
 Dog::Dog(): Animal("Dog")
 {
-	this->_brain = new Brain();
 	std::cout << "[" << this->_type << "] Default Constructor" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog &dog)
 {
-	*this = dog;
 	std::cout << "[" << this->_type << "] Copy Constructor" << std::endl;
+	*this = dog;
 }
 
 Dog::~Dog()
 {
-	delete this->_brain;
 	std::cout << "[" << this->_type << "] Destructor" << std::endl;
+	delete this->_brain;
 }
 
 Dog	&Dog::operator=(const Dog &dog)

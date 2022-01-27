@@ -18,12 +18,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 {
+	std::cout << "Bureauctrat copy constructor called" << std::endl;
 	*this = bureaucrat;
 	if (this->_grade < 1)
 		throw GradeTooHighException();
 	else if (this->_grade > 150)
 		throw GradeTooLowException();
-	std::cout << "Bureauctrat copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -34,11 +34,9 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
 	std::cout << "Bureaucrat assignment operator called" << std::endl;
-	// this->_name = bureau._name;
 	this->_grade = bureaucrat._grade;
 	return (*this);
 }
-
 
 std::string		Bureaucrat::getName() const
 {

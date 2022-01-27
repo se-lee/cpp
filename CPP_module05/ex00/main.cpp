@@ -12,7 +12,7 @@ int main()
 		std::cout << a;
 		a.incrementGrade();
 		std::cout << a;
-		a.decrementGrade();
+		a.incrementGrade();
 		std::cout << a;
 	}
 	catch(const std::exception &e)

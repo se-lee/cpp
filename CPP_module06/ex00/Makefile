@@ -1,6 +1,7 @@
 NAME = convert
 
 SRCS =	main.cpp		\
+		Convert.cpp		\
 
 GCCF = clang++ -Wall -Werror -Wextra -std=c++98
 

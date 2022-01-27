@@ -1,42 +1,31 @@
 #include <iostream>
 #include <string>
-#include <sstream>
-#include <typeinfo>
+#include <stdlib.h>
+#include <cmath>
+#include <cstdlib>
 
 int main(int argc, char **argv)
 {
 	if (argc != 2)
 		return (1);
+
+	char	*input = argv[1];
 		
+/*
+atof or strtof
+*/
 	char	c;
 	int		i;
 	float	f;
 	double	d;
 	
-	std::string			input = argv[1];
-	std::string			stream;
-
-	stream = argv[1];
-
 	c = argv[1][0];
+
 	i = static_cast<int>(c);
 	f = static_cast<float>(c);
 	d = static_cast<double>(c);
 
-
 	std::cout << "input: " << input << std::endl;
-	std::cout << "stream: " << stream << std::endl;
-	std::cout << "c: " << c << std::endl;
-	std::cout << "i: " << i << std::endl;
-	std::cout << "f: " << f << std::endl;
-	std::cout << "d: " << d << std::endl << std::endl;
-
-	
-	// std::stringstream (stream) >> c;
-	std::stringstream (stream) >> i;
-	std::stringstream (stream) >> f;
-	std::stringstream (stream) >> d;
-	
 	std::cout << "c: " << c << std::endl;
 	std::cout << "i: " << i << std::endl;
 	std::cout << "f: " << f << std::endl;
@@ -44,6 +33,29 @@ int main(int argc, char **argv)
 
 	std::cout << std::endl;
 
+	d = std::atof(input);
+	c = static_cast<char>(d);
+	i = static_cast<int>(d);
+	f = static_cast<float>(d);
+
+	std::cout << "c: " << c << std::endl;
+	std::cout << "i: " << i << std::endl;
+	std::cout << "f: " << f << std::endl;
+	std::cout << "d: " << d << std::endl;
+
+
+/*
+
+isprint: check if character is printable
+isspace: check if character is white-space (skip)
+
+std::isnan
+std::isinf;
+
+*/
+
+
+	std::cout << std::endl;
 	return (0);
 }
 
@@ -52,6 +64,7 @@ int main(int argc, char **argv)
 /*
 
  "       a"
+floatは値の最後にfつける
 
 ./convert 0
 char: Non displayable

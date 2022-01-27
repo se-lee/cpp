@@ -9,6 +9,7 @@ class Convert
 		~Convert();
 
 		Convert	&operator=(const Convert &src);
+		
 
 // exception: out of range? impossible to convert?
 

@@ -13,6 +13,10 @@ Convert::Convert(char *str)
 {
 	this->_input = str;
 	this->_value = std::atof(str);
+	if (strchr(str, '.'))
+		this->_dot = true;
+	else
+		this->_dot = false;
 }
 
 Convert::~Convert()
@@ -35,6 +39,19 @@ char	*Convert::getInput() const
 double Convert::getValue() const
 {
 	return (this->_value);
+}
+
+bool	Convert::getDot() const
+{
+	return (this->_dot);
+}
+
+std::string Convert::putDot()
+{
+	if (this->_dot)
+		return ("");
+	else
+		return (".0");
 }
 
 char	Convert::toChar()
@@ -86,7 +103,7 @@ void	Convert::printFloat()
 	else if (isinf(this->_value))
 		std::cout << "inff" << std::endl;
 	else
-		std::cout << this->toFloat() << std::endl;
+		std::cout << this->toFloat() << this->putDot() << "f" <<std::endl;
 }
 
 void	Convert::printDouble()
@@ -97,5 +114,5 @@ void	Convert::printDouble()
 	else if (isinf(this->_value))
 		std::cout << "inf" << std::endl;
 	else
-		std::cout << this->toDouble() << std::endl;
+		std::cout << this->toDouble() << this->putDot() <<std::endl;
 }

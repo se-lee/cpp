@@ -1,10 +1,8 @@
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 
-# include <stdexcept>
 # include <iostream>
-# include <string>
-# include <stdlib.h>
+# include <string.h>
 # include <cmath>
 # include <cctype>
 
@@ -13,6 +11,7 @@ class Convert
 	private:
 		char			*_input;
 		double			_value;
+		bool			_dot;
 
 	public:
 		Convert();
@@ -24,6 +23,9 @@ class Convert
 
 		char	*getInput() const;
 		double	getValue() const;
+		bool	getDot() const;
+		std::string	putDot();
+	
 		char	toChar();
 		int		toInt();
 		float	toFloat();
@@ -33,8 +35,6 @@ class Convert
 		void	printInt();
 		void	printFloat();
 		void	printDouble();
-
-// exception: out of range? impossible to convert?
 
 };
 

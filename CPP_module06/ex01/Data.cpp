@@ -13,19 +13,20 @@ Data::~Data()
 {
 }
 
-Data	&Data::operator=(const Data &data)
+// Data	&Data::operator=(const Data &data)
+// {
+// 	(void)data;
+// 	return (*this);
+// }
+
+uintptr_t	Data::serialize(Data* ptr)
 {
-	return (*this);
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-uintptr_t	serialize(Data* ptr)
+Data		*Data::deserialize(uintptr_t raw)
 {
-
-}
-
-Data*		deserialize(uintptr_t raw)
-{
-
+	return (reinterpret_cast<Data *>(raw));
 }
 
 

@@ -2,25 +2,29 @@
 
 int main()
 {
-	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
 	Intern	someRandomIntern;
 	Form	*rrf;
+	Form	*shrub;
+	Form	*pardon;
+	Form	*random;
+
+	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
+	
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
-	Form	*shrub;
-	shrub = someRandomIntern.makeForm("shrubbery creation", "shrub_target");
+	shrub = someRandomIntern.makeForm("shrubbery creation", "Shrub_target");
+	
 
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
-	Form	*pardon;
-	pardon = someRandomIntern.makeForm("presidential pardon", "pardon_target");
+	pardon = someRandomIntern.makeForm("presidential pardon", "Pardon_target");
+	
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
-	Form	*random;
-	random = someRandomIntern.makeForm("random form", "random target");
+	random = someRandomIntern.makeForm("random form", "Random target");
 
 	std::cout << std::endl << "---------------------------------" << std::endl;
 

@@ -2,23 +2,23 @@
 
 Form::Form(): _name("(name)"), _signed(false), _gradeSign(1), _gradeExecute(1)
 {
-	std::cout << "Form default constructor called" << std::endl;
+	// std::cout << "Form default constructor called" << std::endl;
 }
 
 Form::Form(std::string const name, int gradeSign, int gradeExe)
 	: _name(name), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExe)
 {
-	std::cout << "Form variable constructor called" << std::endl;
+	// std::cout << "Form variable constructor called" << std::endl;
 }
 
 Form::Form(const Form &form): _name(form._name), _signed(form._signed), _gradeSign(form._gradeSign), _gradeExecute(form._gradeExecute)
 {
-	std::cout << "Form copy constructor called" << std::endl;
+	// std::cout << "Form copy constructor called" << std::endl;
 }
 
 Form::~Form()
 {
-	std::cout << "Form destructor called" << std::endl;
+	// std::cout << "Form destructor called" << std::endl;
 }
 
 Form	&Form::operator=(const Form &form)

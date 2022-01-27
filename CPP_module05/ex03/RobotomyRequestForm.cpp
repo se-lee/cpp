@@ -3,24 +3,25 @@
 RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy_Request", 72, 45)
 {
 	this->_target = "Unknown";
-	std::cout << "Robotomy Default constructor called" << std::endl;
+	// std::cout << "Robotomy Default constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Robotomy_Request", 75, 45)
 {
 	this->_target = target;
-	std::cout << "Robotomy parameter constructor called" << std::endl;
+	std::cout << "target: " << this->_target << std::endl;
+	// std::cout << "Robotomy parameter constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &source)
 {
 	*this = source;
-	std::cout << "Robotomy Copy constructor called" << std::endl;
+	// std::cout << "Robotomy Copy constructor called" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Robotomy destructor called" << std::endl;
+	// std::cout << "Robotomy destructor called" << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &source)

@@ -3,24 +3,25 @@
 ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery_Creation", 145, 137)
 {
 	this->_target = "Unknown";
-	std::cout << "Shrubbery default constructor called" << std::endl;
+	// std::cout << "Shrubbery default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Shrubbery_Creation", 145, 137)
 {
 	this->_target = target;
-	std::cout << "Shrubbery parameter constructor called" << std::endl;
+	std::cout << "target: " << this->_target << std::endl;
+	// std::cout << "Shrubbery parameter constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &source)
 {
 	*this = source;
-	std::cout << "Shrubbery copy constructor called" << std::endl;
+	// std::cout << "Shrubbery copy constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Shrubbery destructor called" << std::endl;
+	// std::cout << "Shrubbery destructor called" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &source)

@@ -10,7 +10,7 @@ int main()
 	std::cout << std::endl << a;
 	std::cout << b;
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
-	Form		*shrub = new ShrubberyCreationForm("Shrub");
+	Form		*shrub = new ShrubberyCreationForm("Shurub-target");
 	std::cout << *shrub;
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 	a.signForm(*shrub);

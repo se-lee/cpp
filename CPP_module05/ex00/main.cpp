@@ -3,9 +3,9 @@
 int main()
 {
 	Bureaucrat a("A", 1);
-	std::cout << "-------------" << std::endl;
+	Bureaucrat b("B", 150);
+	std::cout << "------------------------" << std::endl << std::endl;
 
-	std::cout << "start: " << a; 
 	try
 	{
 		a.decrementGrade();
@@ -13,19 +13,13 @@ int main()
 		a.incrementGrade();
 		std::cout << a;
 		a.incrementGrade();
-		std::cout << a;
+		std::cout << a << std::endl;
 	}
 	catch(const std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
-	std::cout << std::endl << "=================================" << std::endl << std::endl;
-
-	Bureaucrat b("B", 150);
-	std::cout << "-------------" << std::endl;
-	std::cout << "start: " << b;
-
+	std::cout << std::endl << "------------------------" << std::endl << std::endl;
 	try
 	{
 		b.incrementGrade();	
@@ -35,11 +29,31 @@ int main()
 		b.decrementGrade();
 		std::cout << b;
 	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << std::endl << "------------------------" << std::endl << std::endl;
+
+	try
+	{
+		Bureaucrat c("C", 0);
+	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+	std::cout << std::endl << "------------------------" << std::endl << std::endl;
+	try
+	{
+		Bureaucrat d("D", 151);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}	
+
 	std::cout << std::endl << "=================================" << std::endl << std::endl;
 	return 0;
 

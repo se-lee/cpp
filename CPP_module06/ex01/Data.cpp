@@ -13,11 +13,11 @@ Data::~Data()
 {
 }
 
-// Data	&Data::operator=(const Data &data)
-// {
-// 	(void)data;
-// 	return (*this);
-// }
+Data	&Data::operator=(const Data &data)
+{
+	(void)data;
+	return (*this);
+}
 
 uintptr_t	Data::serialize(Data* ptr)
 {
@@ -28,5 +28,3 @@ Data		*Data::deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data *>(raw));
 }
-
-

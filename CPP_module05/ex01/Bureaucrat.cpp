@@ -34,7 +34,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
 	std::cout << "Bureaucrat assignment operator called" << std::endl;
-	// this->_name = bureau._name;
 	this->_grade = bureaucrat._grade;
 	return (*this);
 }
@@ -70,11 +69,15 @@ void	Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signForm(Form &form)
 {
-	form.beSigned(*this);
-	if (form.getSigned() == true)
+	try
+	{
+		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
-	else
-		std::cout << this->_name << " couldn't sign " << form.getName() << " because the grade is too low" << std::endl; 
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

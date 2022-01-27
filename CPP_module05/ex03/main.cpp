@@ -1,4 +1,3 @@
-// #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 
 int main()
@@ -18,7 +17,7 @@ int main()
 
 	Form	*pardon;
 	pardon = someRandomIntern.makeForm("presidential pardon", "pardon_target");
-	std::cout << std::endl << "---------------------------------" << std::endl;
+	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
 	Form	*random;
 	random = someRandomIntern.makeForm("random form", "random target");

@@ -18,5 +18,4 @@ class Intern
 		static std::string const	name_set[3];
 };
 
-
 #endif

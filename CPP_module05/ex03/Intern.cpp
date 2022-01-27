@@ -25,7 +25,6 @@ Intern	&Intern::operator=(const Intern &intern)
 {
 	std::cout << "Intern assignment operator" << std::endl;
 	(void)intern;
-	// *this = intern;
 	return (*this);
 }
 

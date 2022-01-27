@@ -8,6 +8,10 @@ Form::Form(): _name("(name)"), _signed(false), _gradeSign(1), _gradeExecute(1)
 Form::Form(std::string const name, int gradeSign, int gradeExe)
 	: _name(name), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExe)
 {
+	if (this->_gradeSign > 150 || this->_gradeExecute > 150)
+		throw Form::GradeTooLowException();
+	else if (this->_gradeSign < 1 || this->_gradeExecute < 1)
+		throw Form::GradeTooHighException();
 	std::cout << "Form variable constructor called" << std::endl;
 }
 
@@ -23,7 +27,6 @@ Form::~Form()
 
 Form	&Form::operator=(const Form &form)
 {
-	// this->_name = form._name;
 	this->_signed = form._signed;
 	return (*this);
 }
@@ -58,16 +61,20 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 
 const char	*Form::GradeTooHighException::what() const throw()
 {
-	return ("Form grade is too high");
+	return ("grade is too high");
 }
 
 const char	*Form::GradeTooLowException::what() const throw()
 {
-	return ("Form grade is too low");
+	return ("grade is too low");
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
-	out << "The form named, " << form.getName() << " requires Grade " << form.getGradeSign() << " to sign and Grade " << form.getGradeExecute() << " to execute." << std::endl;
+	out << "The form named [" << form.getName() << "] requires Grade " << form.getGradeSign() << " to sign and Grade " << form.getGradeExecute() << " to execute. ";
+	if (form.getSigned())
+		out << "It is signed." << std::endl;
+	else
+		out << "It is not signed." << std::endl;
 	return (out);
 }

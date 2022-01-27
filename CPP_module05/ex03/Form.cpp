@@ -23,7 +23,6 @@ Form::~Form()
 
 Form	&Form::operator=(const Form &form)
 {
-	// this->_name = form._name;
 	this->_signed = form._signed;
 	return (*this);
 }
@@ -73,6 +72,10 @@ const char	*Form::FormNotSignedException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
-	out << "The form named, " << form.getName() << " requires Grade " << form.getGradeSign() << " to sign and Grade " << form.getGradeExecute() << " to execute." << std::endl;
+	out << "The form named [" << form.getName() << "] requires Grade " << form.getGradeSign() << " to sign and Grade " << form.getGradeExecute() << " to execute. ";
+	if (form.getSigned())
+		out << "It is signed." << std::endl;
+	else
+		out << "It is not signed." << std::endl;
 	return (out);
 }

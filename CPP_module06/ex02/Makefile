@@ -6,7 +6,7 @@ SRCS =	main.cpp		\
 		B.cpp			\
 		C.cpp			\
 
-GCCF = clang++ -Wall -Werror -Wextra -std=c++98
+GCCF = clang++ -Wall -Werror -Wextra -Wno-unused -std=c++98
 
 OBJS = $(addprefix bin/, ${SRCS:.cpp=.o})
 

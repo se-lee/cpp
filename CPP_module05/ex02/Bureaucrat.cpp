@@ -34,7 +34,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
 	std::cout << "Bureaucrat assignment operator called" << std::endl;
-	// this->_name = bureau._name;
 	this->_grade = bureaucrat._grade;
 	return (*this);
 }

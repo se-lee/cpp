@@ -7,9 +7,11 @@ int main()
 {
 	Bureaucrat	a("Worker_A", 1);
 	Bureaucrat	b("Worker_B", 80);
+	std::cout << std::endl << a;
+	std::cout << b;
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 	Form		*shrub = new ShrubberyCreationForm("Shrub");
-
+	std::cout << *shrub;
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 	a.signForm(*shrub);
 	b.signForm(*shrub);
@@ -19,6 +21,7 @@ int main()
 	std::cout << std::endl << "=================================" << std::endl << std::endl;
 	
 	Form	*robo = new RobotomyRequestForm("Robo");
+	std::cout << *robo;
 	std::cout << std::endl;
 	a.signForm(*robo);
 	b.signForm(*robo);
@@ -28,6 +31,7 @@ int main()
 	std::cout << std::endl << "=================================" << std::endl << std::endl;
 
 	Form	*pardon = new PresidentialPardonForm("Pardon");
+	std::cout << *pardon;
 	std::cout << std::endl;
 	a.signForm(*pardon);
 	b.signForm(*pardon);

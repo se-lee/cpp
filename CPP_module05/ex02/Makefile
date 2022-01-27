@@ -22,6 +22,7 @@ $(NAME) :	${OBJS}
 
 clean :
 			rm -f ${OBJS}
+			rm -f Shrub_shrubbery
 			rm -rf bin/
 
 fclean :	clean

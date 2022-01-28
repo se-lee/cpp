@@ -7,10 +7,8 @@
 Base	*generate(void)
 {
 	Base	*base_ptr;
-	
-	int		i;
-	
-	i = rand() % 3;
+	int		i = rand() % 3;
+
 	switch (i)
 	{
 		case 0:
@@ -29,7 +27,6 @@ Base	*generate(void)
 			base_ptr = NULL;
 			std::cout << "NULL generated" << std::endl;
 	}
-
 	return (base_ptr);
 }
 
@@ -51,10 +48,6 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-
-// It prints the actual type of the object pointed to by p: 
-// 	"A", "B" or "C". Using a pointer inside this function is forbidden.
-
 	try
 	{
 		A	&a = dynamic_cast<A &>(p);
@@ -62,23 +55,22 @@ void	identify(Base &p)
 	}
 	catch(std::bad_cast &badcast)
 	{
-		std::cout << "conversion is not ok" << std::endl;
-	}
-	try {
-		B &b = dynamic_cast<B &>(p);
-		std::cout << "ref: Actual type is B" << std::endl;
-	}
-	catch (std::bad_cast &badcast)
-	{
-		std::cout << "conversion is not ok" << std::endl;
-	}
-	try {
-		C &c = dynamic_cast<C &>(p);
-		std::cout << "ref: Actual type is C" << std::endl;
-	}
-	catch (std::bad_cast &badcast)
-	{
-		std::cout << "conversion is not ok" << std::endl;
+		try {
+			B &b = dynamic_cast<B &>(p);
+			std::cout << "ref: Actual type is B" << std::endl;
+		}
+		catch (std::bad_cast &badcast)
+		{
+			try 
+			{
+				C &c = dynamic_cast<C &>(p);
+				std::cout << "ref: Actual type is C" << std::endl;
+			}
+			catch (std::bad_cast &badcast)
+			{
+				std::cout << "ref: conversion is not ok" << std::endl;
+			}
+		}
 	}
 }
 
@@ -92,7 +84,7 @@ int main()
 		identify(ptr);
 		identify(*ptr);
 		delete ptr;
-		std::cout << "-----------------" << std::endl;
+		std::cout << "-----------------------" << std::endl;
 	}
 	
 	return (0);

@@ -91,25 +91,3 @@ int main()
 	return (0);
 }
 
-/*
-int	main()
-{
-	A		a; //reference value;
-	Base	*base = &a; //implicit upcast
-
-	// explicit downcast -> suspens..(?)
-	A		*b = dynamic_cast<A *>(base);
-
-	if (b == NULL)
-	{
-		std::cout << "conversion is not ok" << std::endl;
-	}
-	else
-	{
-		std::cout << "conversion is ok" << std::endl;
-	}
-
-
-	return (0);
-}
-*/

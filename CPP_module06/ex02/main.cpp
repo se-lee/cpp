@@ -8,7 +8,7 @@ Base	*generate(void)
 {
 	Base	*base_ptr;
 	int		i = rand() % 3;
-
+	
 	switch (i)
 	{
 		case 0:

@@ -10,10 +10,17 @@ template < typename T >
 typename T::iterator	easyfind( T &x, int y) {
 	typename T::iterator it;
 	it = std::find( x.begin(), x.end(), y);
+	
+	class OccurenceNotFoundException: public std::exception {
+			const char *what() const throw() {
+				return ("Error: Occurence not found");
+			}
+	};
+
 	if (it == x.end())
-		std::cout << "Element not found" << std::endl;
+		throw ( OccurenceNotFoundException() );
 	else
-		return it;
+		return ( it );
 }
 
 #endif

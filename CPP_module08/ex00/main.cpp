@@ -6,7 +6,7 @@ int main()
 	int		*p;
 
 	p = std::find(arr, arr+7, 5);
-	std::cout << *p << std::endl;
+	std::cout << "array find: " << *p << std::endl;
 
 	std::vector<int> v1;
 	std::vector<int>::iterator	it;
@@ -19,11 +19,17 @@ int main()
 	v1.push_back(6);
 	v1.push_back(7);
 
-	it = std::find(v1.begin(), v1.end(), 5);
-	std::cout << *it << std::endl;
+	std::cout << "real find: " << *(std::find(v1.begin(), v1.end(), 5)) << std::endl;
 	
-	std::vector<int>::iterator it2 = easyfind(v1, 5);
-	std::cout << *it2 << std::endl;
+	try 
+	{
+		std::cout << "easyfind 1: " << *(easyfind(v1, 5)) << std::endl;
+		std::cout << "easyfind 2: " << *(easyfind(v1, 10)) << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	return (0);
 }

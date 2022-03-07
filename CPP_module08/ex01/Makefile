@@ -1,7 +1,7 @@
 NAME = easyFind
 
 SRCS =	main.cpp		\
-		easyfind.hpp	\
+		Span.cpp		\
 
 GCCF = clang++ -Wall -Werror -Wextra -std=c++98
 

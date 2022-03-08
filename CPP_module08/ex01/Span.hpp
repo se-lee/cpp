@@ -29,10 +29,12 @@ public:
 		public:
 			const char *what() const throw ();
 	};
+
+	class elementCountException: public std::exception {
+		public:
+			const char *what() const throw ();
+	};
 };
-
-
-
 
 
 #endif

@@ -7,11 +7,15 @@ Span::Span( void )
 Span::Span( unsigned int nbr )
 {
 	this->_size = nbr;
-	this->_vector = std::vector<int> (nbr);
+	this->_element_count = 0;
+	// this->_vector = std::vector<int> (nbr);
 }
 
 Span::Span( const Span &span )
 {
+	this->_size = span._size;
+	this->_element_count = span._element_count;
+	this->_vector = span._vector;
 }
 
 Span::~Span()
@@ -21,13 +25,18 @@ Span::~Span()
 Span	&Span::operator=( const Span &span )
 {
 	this->_size = span._size;
+	this->_element_count = span._element_count;
+	//vector;
 	return ( *this );
 }
 
 void	Span::addNumber( int nbr )
 {
-	if (this->_vector.size() < this->_size)
+	if (this->_element_count < this->_size)
+	{
 		this->_vector.push_back( nbr );
+		this->_element_count++;
+	}
 	else
 		throw spanIsFullException();
 }
@@ -43,9 +52,11 @@ unsigned int	Span::shortestSpan( void )
 
 	std::vector<int>:: iterator it;
 // *** これだとVectorそのものがソートされてしまうため、コピーつくって行った方が良さそう
+// how to make a copy of this->vector??
 	std::sort( this->_vector.begin(), this->_vector.end() );
 	for (it = this->_vector.begin(); it != this->_vector.end(); it++)
 	{
+		// std::cout << "[it+1] " << *(it + 1) << " [it] " << *it << std::endl;
 		temp = *(it + 1) - *it;
 		if ( shortest > temp )
 			shortest = temp;

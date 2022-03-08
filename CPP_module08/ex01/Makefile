@@ -1,4 +1,4 @@
-NAME = easyFind
+NAME = Span
 
 SRCS =	main.cpp		\
 		Span.cpp		\

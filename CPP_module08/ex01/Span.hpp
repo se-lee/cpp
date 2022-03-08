@@ -10,7 +10,7 @@ class Span {
 
 private:
 	unsigned int		_size;
-	int					_value;
+	unsigned int		_element_count;
 	std::vector<int>	_vector;
 
 public:

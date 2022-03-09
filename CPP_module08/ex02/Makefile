@@ -1,4 +1,4 @@
-NAME = easyFind
+NAME = mutant_stack
 
 SRCS =	main.cpp		\
 

@@ -24,9 +24,9 @@ Convert::Convert(char *str)
 		this->_dot = true;
 	else
 		this->_dot = false;
-	if (strcmp(str, "nan") == 0 || strcmp(str, "nanf") == 0)
+	if (strstr(str, "nan"))
 		this->_isnan = true;
-	if (strcmp(str, "inf") == 0 || strcmp(str, "inff") == 0)
+	if (strstr(str, "inf"))
 		this->_isinf = true;
 }
 
@@ -59,10 +59,10 @@ bool	Convert::getDot() const
 
 std::string Convert::putDot()
 {
-	if (this->_dot)
-		return ("");
-	else
+	if (!this->_dot || (strstr(this->_input, ".0")))
 		return (".0");
+	else
+		return ("");
 }
 
 char	Convert::toChar()
@@ -95,7 +95,7 @@ void	Convert::printChar()
 	else if (!isprint(this->toChar()))
 		std::cout << "non displayable" << std::endl;
 	else
-		std::cout << this->toChar() << std::endl;
+		std::cout << "'" << this->toChar() << "'" << std::endl;
 }
 
 void	Convert::printInt()
@@ -114,7 +114,13 @@ void	Convert::printFloat()
 	if (this->_isnan)
 		std::cout << "nanf" << std::endl;
 	else if (this->_isinf)
+	{
+		if (this->_value < 0)
+			std::cout << "-";
+		else
+			std::cout << "+";
 		std::cout << "inff" << std::endl;
+	}
 	else
 		std::cout << this->toFloat() << this->putDot() << "f" <<std::endl;
 }
@@ -125,7 +131,13 @@ void	Convert::printDouble()
 	if (this->_isnan)
 		std::cout << "nan" << std::endl;
 	else if (this->_isinf)
+	{
+		if (this->_value < 0)
+			std::cout << "-";
+		else
+			std::cout << "+";
 		std::cout << "inf" << std::endl;
+	}
 	else
 		std::cout << this->toDouble() << this->putDot() <<std::endl;
 }

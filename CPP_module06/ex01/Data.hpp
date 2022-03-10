@@ -9,12 +9,10 @@ class Data
 	public:
 		Data();
 		Data(const Data &data);
-		~Data();
+		virtual ~Data();
 
 		Data	&operator=(const Data &data);
 
-		uintptr_t	serialize(Data* ptr);
-		Data*		deserialize(uintptr_t raw);
 };
 
 #endif

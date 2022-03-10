@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <string.h>
-# include <cmath>
 # include <cctype>
 
 class Convert
@@ -12,12 +11,14 @@ class Convert
 		char			*_input;
 		double			_value;
 		bool			_dot;
+		bool			_isnan;
+		bool			_isinf;
 
 	public:
 		Convert();
 		Convert(const Convert &src);
 		Convert(char *str);
-		~Convert();
+		virtual ~Convert();
 
 		Convert	&operator=(const Convert &src);
 

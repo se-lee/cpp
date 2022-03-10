@@ -43,7 +43,7 @@ void	identify(Base *p)
 	else if (c)
 		std::cout << "ptr: Actual type is C" << std::endl;
 	else
-		std::cout << "NULL" << std::endl;
+		std::cout << "ptr: NULL" << std::endl;
 }
 
 void	identify(Base &p)
@@ -81,8 +81,11 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
+		if (ptr != nullptr)
+		{
+			identify(ptr);
+			identify(*ptr);
+		}
 		delete ptr;
 		std::cout << "-----------------------" << std::endl;
 	}

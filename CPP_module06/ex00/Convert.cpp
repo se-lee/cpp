@@ -1,6 +1,6 @@
 #include "Convert.hpp"
 
-Convert::Convert()
+Convert::Convert(): _input(NULL), _value(0), _dot(false), _isnan(false), _isinf(false)
 {
 }
 
@@ -12,11 +12,22 @@ Convert::Convert(const Convert &src)
 Convert::Convert(char *str)
 {
 	this->_input = str;
-	this->_value = std::atof(str);
+	this->_dot = false;
+	this->_isnan = false;
+	this->_isinf = false;
+
+	if (strlen(str) == 1 && (str[0] > '9' || str[0] < '0'))
+		this->_value = static_cast<double>(str[0]);
+	else
+		this->_value = std::atof(str);
 	if (strchr(str, '.'))
 		this->_dot = true;
 	else
 		this->_dot = false;
+	if (strcmp(str, "nan") == 0)
+		this->_isnan = true;
+	if (strcmp(str, "inf") == 0)
+		this->_isinf = true;
 }
 
 Convert::~Convert()
@@ -56,6 +67,8 @@ std::string Convert::putDot()
 
 char	Convert::toChar()
 {
+	if (strlen(this->_input) == 1 && isalpha(this->_input[0]))
+		return (static_cast<char>(this->_input[0]));
 	return (static_cast<char>(this->_value));
 }
 
@@ -77,7 +90,7 @@ double	Convert::toDouble()
 void	Convert::printChar()
 {
 	std::cout << "char: " ;
-	if (isnan(this->_value) || isinf(this->_value))
+	if (this->_isnan || this->_isinf)
 		std::cout << "impossible" << std::endl;
 	else if (!isprint(this->toChar()))
 		std::cout << "non displayable" << std::endl;
@@ -88,7 +101,7 @@ void	Convert::printChar()
 void	Convert::printInt()
 {
 	std::cout << "int: " ;
-	if (isnan(this->_value) || isinf(this->_value) 
+	if ( this->_isnan || this->_isinf 
 		|| this->_value >= INT_MAX || this->_value <= INT_MIN)
 		std::cout << "impossible" << std::endl;
 	else
@@ -98,9 +111,9 @@ void	Convert::printInt()
 void	Convert::printFloat()
 {
 	std::cout << "float: " ;
-	if (isnan(this->_value))
+	if (this->_isnan)
 		std::cout << "nanf" << std::endl;
-	else if (isinf(this->_value))
+	else if (this->_isinf)
 		std::cout << "inff" << std::endl;
 	else
 		std::cout << this->toFloat() << this->putDot() << "f" <<std::endl;
@@ -109,9 +122,9 @@ void	Convert::printFloat()
 void	Convert::printDouble()
 {
 	std::cout << "double: " ;
-	if (isnan(this->_value))
+	if (this->_isnan)
 		std::cout << "nan" << std::endl;
-	else if (isinf(this->_value))
+	else if (this->_isinf)
 		std::cout << "inf" << std::endl;
 	else
 		std::cout << this->toDouble() << this->putDot() <<std::endl;

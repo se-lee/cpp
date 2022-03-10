@@ -24,9 +24,9 @@ Convert::Convert(char *str)
 		this->_dot = true;
 	else
 		this->_dot = false;
-	if (strcmp(str, "nan") == 0)
+	if (strcmp(str, "nan") == 0 || strcmp(str, "nanf") == 0)
 		this->_isnan = true;
-	if (strcmp(str, "inf") == 0)
+	if (strcmp(str, "inf") == 0 || strcmp(str, "inff") == 0)
 		this->_isinf = true;
 }
 

@@ -19,7 +19,10 @@ Convert::Convert(char *str)
 	if (strlen(str) == 1 && (str[0] > '9' || str[0] < '0'))
 		this->_value = static_cast<double>(str[0]);
 	else
+	{
 		this->_value = std::atof(str);
+	}
+
 	if (strchr(str, '.'))
 		this->_dot = true;
 	else
@@ -59,7 +62,7 @@ bool	Convert::getDot() const
 
 std::string Convert::putDot()
 {
-	if (!this->_dot || (strstr(this->_input, ".0")))
+	if (!this->_dot || strstr(this->_input, ".0"))
 		return (".0");
 	else
 		return ("");
@@ -121,8 +124,11 @@ void	Convert::printFloat()
 			std::cout << "+";
 		std::cout << "inff" << std::endl;
 	}
-	else
+	else if (this->toFloat() < std::numeric_limits<float>::infinity() 
+		&& this->toFloat() > -std::numeric_limits<float>::infinity())
 		std::cout << this->toFloat() << this->putDot() << "f" <<std::endl;
+	else
+		std::cout << this->toFloat() << "f" <<std::endl;
 }
 
 void	Convert::printDouble()
@@ -138,6 +144,10 @@ void	Convert::printDouble()
 			std::cout << "+";
 		std::cout << "inf" << std::endl;
 	}
-	else
+	else if (this->toDouble() < std::numeric_limits<double>::infinity() 
+		&& this->toDouble() > -std::numeric_limits<double>::infinity())
 		std::cout << this->toDouble() << this->putDot() <<std::endl;
+	else
+		std::cout << this->toDouble() <<std::endl;
+
 }

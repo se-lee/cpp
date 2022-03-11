@@ -7,7 +7,7 @@
 Base	*generate(void)
 {
 	Base	*base_ptr;
-	int		i = rand() % 3;
+	int		i = std::rand() % 3;
 	
 	switch (i)
 	{
@@ -81,7 +81,7 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		ptr = generate();
-		if (ptr != nullptr)
+		if (ptr)
 		{
 			identify(ptr);
 			identify(*ptr);

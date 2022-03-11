@@ -16,10 +16,12 @@ int main()
 	uintptr_t raw;
 	
 	raw = serialize(data);
+	std::cout << "[serialize]" << std::endl;
 	std::cout << "data: " << data << std::endl;
 	std::cout << "raw : " << raw << std::endl;
-	
+	std::cout << "--------------------" << std::endl;
 	data = deserialize(raw);
+	std::cout << "[deserialize]" << std::endl;
 	std::cout << "data: " << data << std::endl;
 
 	delete data;

@@ -2,6 +2,18 @@
 
 #define MAX_VAL 10
 
+class Awesome {
+	public:
+		Awesome( void ) : _n(4) { return ; }
+		int get(void) const { return this->_n; }
+	
+	private:
+		int	_n;
+};
+
+std::ostream & operator <<(std::ostream &o, Awesome const &rhs) { o << rhs.get(); return o;}
+
+
 int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
@@ -81,3 +93,5 @@ int main(int, char**)
 	delete [] mirror;
 	return 0;
 }
+
+

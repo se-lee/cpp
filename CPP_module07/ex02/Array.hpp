@@ -15,14 +15,14 @@ public:
 
 	Array<T>( void ) {
 		this->_size = 0;
-		this->_content = new T;
+		this->_content = NULL;
 	}
 
 	Array<T>( unsigned int n ) {
-		this->_size = n;
-		this->_content = new T[n];
-		for (unsigned int i = 0; i < n; i++)
-			this->_content[i] = 0;
+			this->_size = n;
+			this->_content = new T[n];
+			for (unsigned int i = 0; i < n; i++)
+				this->_content[i] = 0;
 	}
 
 	Array<T>( Array const & array ) {

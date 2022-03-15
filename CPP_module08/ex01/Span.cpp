@@ -32,7 +32,6 @@ void	Span::addNumber( int nbr )
 {
 	if (this->_element_count < this->_size)
 	{
-		std::cout << "addNum" << std::endl; 
 		this->_vector.push_back( nbr );
 		this->_element_count++;
 	}
@@ -40,21 +39,11 @@ void	Span::addNumber( int nbr )
 		throw spanIsFullException();
 }
 
-/*
-void	Span::addManyNumbers( std::vector<int>::iterator begin, std::vector<int>::iterator end, int nbr )
+void	Span::addManyNumbers( unsigned int size, int (*gen)())
 {
-	for ( std::vector<int>::iterator it = begin; it != end; ++it)
-		this->addNumber( nbr );
-	
-}
-*/
-
-void	Span::addManyNumbers( int nbr )
-{
-	for ( std::vector<int>::iterator it = this->_vector.begin(); it != this->_vector.end(); ++it)
-	{
-		this->addNumber( nbr );
-	}
+	this->_vector.resize( size );
+	this->_element_count = size;
+	std::generate(this->_vector.begin(), this->_vector.end(), gen);
 }
 
 unsigned int	Span::shortestSpan( void )
@@ -73,7 +62,6 @@ unsigned int	Span::shortestSpan( void )
 
 	for (it = copy.begin(); it != copy.end(); it++)
 	{
-		// std::cout << "[it+1] " << *(it + 1) << " [it] " << *it << std::endl;
 		temp = *(it + 1) - *it;
 		shortest = std::min( shortest, temp );
 	}
@@ -105,11 +93,6 @@ unsigned int	Span::getSize( void )
 unsigned int	Span::getElementCount( void )
 {
 	return (this->_element_count);
-}
-
-std::vector<int>	Span::getVector( void )
-{
-	return (this->_vector);
 }
 
 const char	*Span::spanIsFullException::what() const throw()

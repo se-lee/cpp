@@ -1,43 +1,62 @@
 #include "Span.hpp"
 
-int main()
-{
-	Span sp1 = Span(5);
+int RandomNumber () { 
+	return (std::rand()); 
+}
 
-	sp1.addNumber(6);
-	sp1.addNumber(3);
-	sp1.addNumber(17);
-	sp1.addNumber(9);
-	sp1.addNumber(11);
+int main() {
+	{
+		Span sp = Span(5);
 
-	std::cout << "=== [ span 1 ] === " << std::endl;
-	sp1.printSpan();
-	std::cout << "shortest: " << sp1.shortestSpan() << std::endl;
-	std::cout << "longest:  " << sp1.longestSpan() << std::endl;
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
 
+		std::cout << "=== [ span 1 ] === " << std::endl;
+		sp.printSpan();
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "elem: " << sp.getElementCount() << std::endl;
+	}
 
-	std::cout << "=== [ span 2 ] === " << std::endl;
+	{
 
-	Span sp2 = Span(5);	
-	
-	// sp2.addManyNumbers( sp2.getVector().begin(), sp2.getVector().end(), 3 );
-	sp2.addManyNumbers( 3 );
-	std::cout << "size: " << sp2.getSize() << std::endl;
-	std::cout << "elem: " << sp2.getElementCount() << std::endl;
-	sp2.printSpan();
+		std::cout << "=== [ span 2 ] === " << std::endl;
 
-	// sp2.addNumber( 2 );
-	// std::cout << std::endl;
-	// sp2.printSpan();
+		Span sp = Span(5);	
+		
+		sp.addManyNumbers( 3, RandomNumber );
+		std::cout << "size: " << sp.getSize() << std::endl;
+		std::cout << "elem: " << sp.getElementCount() << std::endl;
+		sp.printSpan();
+	}
+
+	{
+		std::cout << "=== [ 10000 tests ] === " << std::endl;
+
+		Span sp(10000);
+		std::srand(time(NULL));
+
+		for (int i = 0; i < 10000; i++){
+			sp.addNumber(std::rand());
+		}
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "elem: " << sp.getElementCount() << std::endl;
+	}
+
+	{
+		std::cout << "=== [ 10000 tests 2 ] === " << std::endl;
+		Span sp(10000);
+
+		std::srand(time(NULL));
+		sp.addManyNumbers( sp.getSize(), RandomNumber );
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "elem: " << sp.getElementCount() << std::endl;
+	}
 
 	return (0);
 }
-
-/*
-
-$> ./ex01
-2
-14
-$>
-
-*/

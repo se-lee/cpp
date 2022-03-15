@@ -16,21 +16,27 @@ int main() {
 
 		std::cout << "=== [ span 1 ] === " << std::endl;
 		sp.printSpan();
+		std::cout << std::endl;
+
 		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
 	}
 
 	{
-
 		std::cout << "=== [ span 2 ] === " << std::endl;
 
 		Span sp = Span(5);	
 		
-		sp.addManyNumbers( 3, RandomNumber );
+		sp.addManyNumbers( sp.getSize(), RandomNumber );
+		sp.printSpan();
+		std::cout << std::endl;
+
+		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
+		std::cout << "longest:  " << sp.longestSpan() << std::endl;
 		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
-		sp.printSpan();
 	}
 
 	{
@@ -42,8 +48,10 @@ int main() {
 		for (int i = 0; i < 10000; i++){
 			sp.addNumber(std::rand());
 		}
+
 		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
 	}
 
@@ -53,8 +61,10 @@ int main() {
 
 		std::srand(time(NULL));
 		sp.addManyNumbers( sp.getSize(), RandomNumber );
+
 		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
+		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
 	}
 

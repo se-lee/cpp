@@ -95,6 +95,11 @@ unsigned int	Span::getElementCount( void )
 	return (this->_element_count);
 }
 
+std::vector<int>	Span::getVector( void )
+{
+	return (this->_vector);
+}
+
 const char	*Span::spanIsFullException::what() const throw()
 {
 	return ("Error: cannot add elements");

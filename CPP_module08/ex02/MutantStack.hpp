@@ -6,6 +6,7 @@
 # include <exception>
 # include <vector>
 # include <stack>
+# include <iterator>
 
 /*
 template<class T, Class C = deque<T> >

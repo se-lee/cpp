@@ -1,7 +1,7 @@
 #include "Span.hpp"
 
 Span::Span( void )
-{//do i need this constructor ?
+{
 }
 
 Span::Span( unsigned int nbr )
@@ -25,7 +25,6 @@ Span	&Span::operator=( const Span &span )
 {
 	this->_size = span._size;
 	this->_element_count = span._element_count;
-	//vector ? ;
 	return ( *this );
 }
 
@@ -33,11 +32,29 @@ void	Span::addNumber( int nbr )
 {
 	if (this->_element_count < this->_size)
 	{
+		std::cout << "addNum" << std::endl; 
 		this->_vector.push_back( nbr );
 		this->_element_count++;
 	}
 	else
 		throw spanIsFullException();
+}
+
+/*
+void	Span::addManyNumbers( std::vector<int>::iterator begin, std::vector<int>::iterator end, int nbr )
+{
+	for ( std::vector<int>::iterator it = begin; it != end; ++it)
+		this->addNumber( nbr );
+	
+}
+*/
+
+void	Span::addManyNumbers( int nbr )
+{
+	for ( std::vector<int>::iterator it = this->_vector.begin(); it != this->_vector.end(); ++it)
+	{
+		this->addNumber( nbr );
+	}
 }
 
 unsigned int	Span::shortestSpan( void )
@@ -49,13 +66,14 @@ unsigned int	Span::shortestSpan( void )
 	unsigned int	temp;
 	shortest = this->longestSpan();
 
-	std::vector<int>:: iterator it;
-// *** これだとVectorそのものがソートされてしまうため、コピーつくって行った方が良さそう
-// how to make a copy of this->vector??
-	std::sort( this->_vector.begin(), this->_vector.end() );
-	for (it = this->_vector.begin(); it != this->_vector.end(); it++)
+	std::vector<int>::iterator it;
+
+	std::vector<int> copy(this->_vector);
+	std::sort( copy.begin(), copy.end() );
+
+	for (it = copy.begin(); it != copy.end(); it++)
 	{
-	//	std::cout << "[it+1] " << *(it + 1) << " [it] " << *it << std::endl;
+		// std::cout << "[it+1] " << *(it + 1) << " [it] " << *it << std::endl;
 		temp = *(it + 1) - *it;
 		shortest = std::min( shortest, temp );
 	}
@@ -71,6 +89,27 @@ unsigned int 	Span::longestSpan( void )
 	int	min = *std::min_element( this->_vector.begin(), this->_vector.end() );
 	
 	return ( max - min );
+}
+
+void	Span::printSpan( void )
+{
+	for ( std::vector<int>::iterator it = this->_vector.begin(); it != this->_vector.end(); it++)
+		std::cout << *it << std::endl;
+}
+
+unsigned int	Span::getSize( void )
+{
+	return (this->_size);
+}
+
+unsigned int	Span::getElementCount( void )
+{
+	return (this->_element_count);
+}
+
+std::vector<int>	Span::getVector( void )
+{
+	return (this->_vector);
 }
 
 const char	*Span::spanIsFullException::what() const throw()

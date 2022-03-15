@@ -5,7 +5,7 @@ int main()
 	int		arr[] = {1, 2, 3, 4, 5, 6, 7};
 	int		*p;
 
-	p = std::find(arr, arr+7, 5);
+	p = std::find(arr, arr + sizeof(arr)/sizeof(arr[0]), 5);
 	std::cout << "array find: " << *p << std::endl;
 
 	std::vector<int> v1;

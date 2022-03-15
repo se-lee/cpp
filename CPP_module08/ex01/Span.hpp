@@ -21,9 +21,16 @@ public:
 
 	Span &operator=( const Span &span );
 
-	void				addNumber( int nbr );
-	unsigned int		shortestSpan( void );
-	unsigned int		longestSpan( void );
+	void			addNumber( int nbr );
+	// void			addManyNumbers( std::vector<int>::iterator begin, std::vector<int>::iterator end, int nbr );
+	void			addManyNumbers( int nbr );
+	unsigned int	shortestSpan( void );
+	unsigned int	longestSpan( void );
+	void			printSpan( void );
+
+	unsigned int		getSize( void );
+	unsigned int		getElementCount( void );
+	std::vector<int>	getVector( void );
 
 	class spanIsFullException: public std::exception {
 		public:
@@ -35,6 +42,5 @@ public:
 			const char *what() const throw ();
 	};
 };
-
 
 #endif

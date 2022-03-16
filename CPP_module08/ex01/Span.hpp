@@ -21,6 +21,14 @@ public:
 
 	Span &operator=( const Span &span );
 
+	
+	template <typename InputIterator>
+	void	addNumbers(InputIterator first, InputIterator last) {
+				_vector.insert(_vector.end(), first, last);
+				_size = _vector.size();
+				_element_count = _vector.size();
+	}
+	
 	void			addNumber( int nbr );
 	void			addManyNumbers( unsigned int size, int (*gen)() );
 	unsigned int	shortestSpan( void );

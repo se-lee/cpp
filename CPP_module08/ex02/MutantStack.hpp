@@ -7,43 +7,26 @@
 # include <vector>
 # include <stack>
 # include <iterator>
+# include <deque>
 
-/*
-template<class T, Class C = deque<T> >
-class std::stack {
-
-    protected:
-        C c; //container
-
-    public:
-        typedef typename C::value_type value_type;
-        typedef typename C::size_type size_type;
-        typedef C container_type;
-        explicit stack(const C& a = C()) : c(a){} // Inherit the constructor
-        bool empty() const { return c.empty(); }
-        size_type size() const { return c.size(); }
-        value_type& top() const { return c.back(); }
-        const value_type& top() const { return c.back(); }
-        void push(const value_type& n) { c.push_back(n); }
-        void pop() { c.pop_back(); }
-
-};
-*/
-
-template < typename T >
-class MutantStack: public std::stack<T> 
+template < typename T, typename U = std::deque<T> >
+class MutantStack: public std::stack<T, U> 
 {
 	private:
 
 	public:
 		MutantStack( void ) {};
 		MutantStack( const MutantStack &mutant ) { *this = mutant; };
-		~MutantStack( void ) {};
+		virtual ~MutantStack( void ) {};
 		MutantStack &operator=( const MutantStack &mutant) { *this = mutant; return *this;};
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		iterator	begin( void ) { return this->c.begin(); };
 		iterator	end( void ) { return this->c.end(); };
+
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		const_iterator	begin( void ) const { return this->c.begin(); };
+		const_iterator	end( void ) const { return this->c.end(); };
 
 };
 

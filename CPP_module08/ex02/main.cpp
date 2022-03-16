@@ -30,8 +30,8 @@ int	main()
 
 	while (it != ite)
 	{
-		std::cout << "it: " << *it << "  ite: " << *ite << std::endl;
-		it++;
+		std::cout << "it: " << *it << std::endl;
+		++it;
 	}
 
 	std::cout << std::endl;
@@ -50,7 +50,7 @@ int	main()
 
 	test.pop_back();
 	std::cout << "list size: " << test.size() << std::endl;
-	std::cout << "list back: " << test.back() << std::endl;
+	std::cout << "list top:  " << test.back() << std::endl;
 
 	std::cout << "======== < list: Push multiple > ==============" << std::endl;
 
@@ -64,8 +64,8 @@ int	main()
 
 	while (list_it != list_ite)
 	{
-		std::cout << "list_it: " << *list_it << " list_ite: " << *list_ite << std::endl;
-		list_it++;
+		std::cout << "list_it: " << *list_it << std::endl;
+		++list_it;
 	}
 	}
 	std::cout << "=================================================" << std::endl;

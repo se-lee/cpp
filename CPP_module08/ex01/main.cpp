@@ -28,8 +28,12 @@ int main() {
 		std::cout << "=== [ span 2 ] === " << std::endl;
 
 		Span sp = Span(5);	
-		
-		sp.addManyNumbers( sp.getSize(), RandomNumber );
+		std::vector<int> v;
+
+		for (int i = 0; i < 5; ++i)
+			v.push_back(std::rand());
+		sp.addNumbers(v.begin(), v.end());
+
 		sp.printSpan();
 		std::cout << std::endl;
 
@@ -37,6 +41,7 @@ int main() {
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
 		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
+
 	}
 
 	{
@@ -69,19 +74,18 @@ int main() {
 	}
 
 	{
+		std::cout << "=== [ 10000 tests 3 ] === " << std::endl;
+
 		Span sp;
 		std::vector<int> v;
 		for (int i = 0; i < 10000; ++i)
-			v.push_back(i);
-
+			v.push_back(std::rand());
 		sp.addNumbers(v.begin(), v.end());
 
-		std::cout << v.size() << std::endl;
 		std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
 		std::cout << "size: " << sp.getSize() << std::endl;
 		std::cout << "elem: " << sp.getElementCount() << std::endl;
-
 	}
 
 	return (0);
